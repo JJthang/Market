@@ -1,0 +1,34 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@layer tailwind-base, primevue, tailwind-utilities;
+
+@layer base{
+  span {
+     @apply text-[#6B7280] font-mono
+  }
+}
+
+@layer components{
+  .p-rating .p-rating-item.p-rating-item-active .p-rating-icon{
+    color: #FDE047
+  }
+}
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+@layer components {
+  .fjc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
