@@ -2,7 +2,7 @@
     <div class="w-full px-40 py-4 fjc mt-10">
         <div class="w-[80%] lg:flex">
             <div class="lg:w-5/12">
-                <Galleria :value="images" :responsiveOptions="responsiveOptions" :pt="{
+                <Galleria :value="data.images" :responsiveOptions="responsiveOptions" :pt="{
                     thumbnailItem: {
                         class: 'w-full px-2'
                     },
@@ -65,7 +65,7 @@
 
 <script setup>
 import { useQuery } from '@tanstack/vue-query'
-import { fetchOneProduct } from '../../api/Product';
+import { fetchOneProduct } from '@/api/Product';
 import { useRoute } from 'vue-router';
 import Galleria from 'primevue/galleria';
 import Rating from 'primevue/rating';
@@ -73,14 +73,10 @@ import Button from 'primevue/button';
 import { ref } from 'vue'
 const { params } = useRoute();
 const id = params.id;
-const images = ref();
 const { data } = useQuery({
     queryKey: ['productDetail', id],
     queryFn: () => fetchOneProduct(id),
-    select: ({ data }) => {
-        images.value = data.images;
-        return data
-    }
+    select: ({ data }) => data
 })
 console.log(data);
 const responsiveOptions = ref([

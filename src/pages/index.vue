@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { fetchCategory } from '../api/Category.js'
+import { fetchCategory } from '@/api/Category.js'
 
 import { useQuery } from "@tanstack/vue-query";
 const colors = ['#363062', '#435585', '#818FB4', '#2B3499', '#2D9596', '#2B2A4C', '#FF8F8F', '#DC8686', '#0E2954',

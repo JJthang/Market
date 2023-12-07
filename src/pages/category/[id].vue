@@ -14,17 +14,15 @@
 </template>
 
 <script setup>
-import { fetchOneCategory } from "../../api/Category.js";
+import { fetchOneCategory } from "@/api/Category.js";
 import { useQuery } from "@tanstack/vue-query";
 import { useRoute } from "vue-router";
-import ListCategoryId from "../../components/CategoryId/listCategoryId.vue";
-const { params } = useRoute();
-const id = params.id;
+import ListCategoryId from "@/components/CategoryId/listCategoryId.vue";
 const { id: Category } = useRoute().params;
 
 const { data } = useQuery({
-    queryKey: ["categoryId", id],
-    queryFn: () => fetchOneCategory(id),
+    queryKey: ["categoryId", Category],
+    queryFn: () => fetchOneCategory(Category),
     select: ({ data }) => data.products
 });
 </script>

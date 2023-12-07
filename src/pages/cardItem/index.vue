@@ -26,10 +26,9 @@
 
 <script setup>
 import { useQuery } from "@tanstack/vue-query";
-import { fetchUser } from '../../api/User.js'
-import Button from 'primevue/button';
-import ListCardItem from "../../components/CardItem/ListCardItem.vue";
-import CheckOut from "../../components/CardItem/CheckOut.vue";
+import { fetchUser } from '@/api/User.js'
+import ListCardItem from "@/components/CardItem/ListCardItem.vue";
+import CheckOut from "@/components/CardItem/CheckOut.vue";
 
 
 const { data } = useQuery({
