@@ -1,6 +1,6 @@
 <template>
     <div class="w-full fjc mt-2 border-b border-[#dddee0] bg-[#FFFFFF] sticky lg:top-[158px] z-10">
-        <ul class="w-[60%] flex aaaa" @click="handTakeElement">
+        <ul class="w-[95%] lg:w-[75%] flex aaaa" @click="handTakeElement">
             <li v-for="(item, index) in tabs" @click="currentTab = index" id="hotel-tab"
                 class="w-full cursor-pointer py-3 text-center"
                 :class="{ 'border-b-4 border-[#1A489C]': currentTab === index }">
@@ -9,23 +9,21 @@
         </ul>
     </div>
     <div class="w-full fjc">
-        <div class="w-[60%] flex justify-between py-6 gap-10">
-            <div class="w-7/12">
+        <div class="pt-3 pb-7 lg:py-4 text-white fjc lg:w-[75%] flex lg:justify-between lg:flex-row flex-col py-6 gap-10">
+            <div class="w-full lg:w-7/12">
                 <div class="overflow-hidden" :class="[read ? 'h-auto' : 'h-[230px]']">
-                    <div v-for="(item, index) in aboutUs" :key="index" class="py-1.5 text-sm leading-7">
+                    <div v-for="(item, index) in aboutUs" :key="index" class="py-1.5 text-sm text-black leading-7">
                         {{ item }}
                         <br>
-                    </div>
-                    <div class="w-full h-[100px]">
                     </div>
                 </div>
                 <div class="flex justify-start items-center mt-5">
                     <span class="text-[#1A489C] font-bold cursor-pointer" @click="handToggRead">
-                        {{ read ? '- Read more' : '+ Read less' }}
+                        {{ read ? '- Read less' : '+ Read more' }}
                     </span>
                 </div>
             </div>
-            <div class="w-4/12">
+            <div class="w-full lg:w-4/12">
                 <ul class="w-full">
                     <li class="py-4 border-b border-border flex justify-between items-center text-sm gap-2">
                         <span class="pi pi-clock"></span>

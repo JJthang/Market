@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full fjc lg:py-6 border-t border-border">
-        <div class="w-[60%]">
+    <div class="w-full justify-center items-center lg:py-6 border-t border-border lg:block hidden">
+        <div class="w-[95%] lg:w-[75%] m-auto">
             <h3 class="text-xl font-bold my-5">Review</h3>
             <div class="flex justify-between gap-5">
                 <div class="w-6/12">

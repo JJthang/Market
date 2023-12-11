@@ -1,8 +1,9 @@
 <template>
     <div class="w-full fjc bg-[#F3F3F3]">
-        <div class="w-[60%] py-6">
-            <div class="w-full flex justify-between">
-                <div class="fjc gap-5">
+        <div class="w-[95%] lg:w-[75%] py-6">
+            <div class="w-full flex lg:flex-row flex-col justify-between">
+                <div
+                    class="flex justify-start items-start lg:justify-center lg:items-center lg:flex-row flex-col gap-3 lg:gap-5 mb-3">
                     <div class="flex justify-center items-end">
                         <input type="checkbox" class="bg-[#232e48] mr-2 h-[20px] cursor-pointer" />
                         <label for="" class="text-[#1a489c] font-semibold text-[13px]">Book for day-use only</label>
@@ -20,22 +21,38 @@
                             },
                             input: {
                                 class:
-                                    'px-2 text-[15px] pt-[-3px] flex  item-center justify-center text-[#1a489c]',
+                                    ' px-0 lg:py-2 py-2 lg:px-2 text-[15px] pt-[-3px] flex  item-center justify-center text-[#1a489c]',
                             },
                             root: {
-                                class: 'fixWidth text-[#1a489c]',
+                                class: 'w-[2rem] lg:w-[3rem] text-[#1a489c] fjc',
                             },
+                            // lg:fixWidth
                         }" optionLabel="name" placeholder="Sort by" class="w-full md:w-9rem" />
                         <Button label="Filter" :pt="{
                             label: {
-                                class: 'font-medium text-[#1a489c]',
+                                class: 'font-medium text-[#1a489c] text-sm',
+                            },
+                            icon: {
+                                class: 'text-[#1a489c]  ',
+                            },
+                            root: {
+                                class: 'text-sm h-[1.5rem] lg:h-[3rem] fjc'
+                            }
+
+                        }" iconPos="right" class="bg-white border border-[#d1d5db] h-[2.7rem]"
+                            icon="pi pi-sliders-h" />
+                    </div>
+                    <!-- class: 'fjc'
+                            },
+                            label: {
+                                class: 'font-medium text-[#1a489c] text-[10px] ',
                             },
                             icon: {
                                 class: 'text-[#1a489c]',
                             },
-                        }" iconPos="right" class="bg-white border border-[#d1d5db] h-[2.7rem]"
-                            icon="pi pi-sliders-h" />
-                    </div>
+                            icon: {
+                                class: 'lg:block hidden lg:px-5 px-2'
+                            } -->
                     <div class="flex">
                         <button v-for="(item, index) in taps" @click="currentTap = index" :key="index"
                             class="lg:px-3 py-1.5 border border-border text-secondary w-[90px] text-xs" :class="([index == 0 ? 'rounded-l-[5px]' : 'rounded-r-[5px]'],
@@ -73,6 +90,7 @@ import Dropdown from "primevue/dropdown";
 import { useQuery } from "@tanstack/vue-query";
 import { fetchProduct } from "@/api/Product.js";
 import Itemlist from "@/components/Home/Room/ListItem/item.vue";
+import { root } from "postcss";
 
 const selectedCity = ref();
 const cities = ref([
@@ -102,11 +120,12 @@ input[type="checkbox"] {
 }
 
 .fixWidth {
-    width: 7rem !important;
-    height: 2.7rem;
+    width: 5rem !important;
+    height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .p-dropdown .p-dropdown-trigger {

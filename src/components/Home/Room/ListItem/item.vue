@@ -47,7 +47,7 @@
                 </div>
 
             </div>
-            <div class="flex-1 lg:px-6 mt-2 hidden lg:block">
+            <div class="flex-1 lg:px-2 mt-2 hidden lg:block">
                 <div class="gridContainer">
                     <div class="py-1 border-b border-[#dddee0] flex items-center"
                         v-for="(itemConven, index1) in item.convenient" :key="index1">

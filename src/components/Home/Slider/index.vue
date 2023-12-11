@@ -1,8 +1,8 @@
 <template>
-    <div class="w-full">
+    <div class="w-full lg:block hidden">
         <div class="w-full py-5">
             <div class="w-full fjc">
-                <div class="w-[60%] flex justify-between items-center">
+                <div class="w-[75%] flex justify-between items-center">
                     <div class="flex flex-col gap-3">
                         <h3 class="text-lg lg:text-2xl text-center lg:text-left font-bold mb-2">Hotel Epinard Nasu</h3>
                         <div class="flex items-center gap-2">
