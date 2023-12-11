@@ -48,24 +48,32 @@ const handleSlideChange = (event) => {
     currentSlide.value = event.currentSlide.index;
 };
 const images = ref([
-    'https://mh-de.netlify.app/_ipx/s_1410x870/https://d2ahiw9kb7is19.cloudfront.net/-/media/8F920C357989465CB850390406F3E272.jpg%3Fd=20171113T074010',
-    'https://mh-de.netlify.app/_ipx/s_1410x870/https://d2ahiw9kb7is19.cloudfront.net/-/media/337C60252E564366B0EEB22DF023AD75.jpg%3Fd=20171113T074015',
-    'https://mh-de.netlify.app/_ipx/s_1410x870/https://d2ahiw9kb7is19.cloudfront.net/-/media/600886F02B8E4B73AA33BDD276F0CBF1.jpg%3Fd=20230411T054446',
-    'https://mh-de.netlify.app/_ipx/s_1410x870/https://d2ahiw9kb7is19.cloudfront.net/-/media/7796D05B92A94240AE5F9106BC88A8E5.jpg%3Fd=20171113T074016',
-    'https://mh-de.netlify.app/_ipx/s_1410x870/https://d2ahiw9kb7is19.cloudfront.net/-/media/F88BD262E982402EA7068A07EB3DB06F.jpg%3Fd=20171113T074016',
-    'https://mh-de.netlify.app/_ipx/s_1410x870/https://d2ahiw9kb7is19.cloudfront.net/-/media/3DBC8E95D06C4E17AEA064E58782FCF3.jpg%3Fd=20171113T074016',
-    'https://mh-de.netlify.app/_ipx/s_1410x870/https://d2ahiw9kb7is19.cloudfront.net/-/media/E74EA323503947E39F98A96345E813E1.jpg%3Fd=20171113T074016',
-    'https://mh-de.netlify.app/_ipx/s_1410x870/https://d2ahiw9kb7is19.cloudfront.net/-/media/002B7AA475A64CD3A4C2C31A5DD4416C.jpg%3Fd=20171113T074017',
-    'https://mh-de.netlify.app/_ipx/s_1410x870/https://d2ahiw9kb7is19.cloudfront.net/-/media/D887407F5A804CDABC1B863D56A0C9B1.jpg%3Fd=20171113T074017',
-    'https://mh-de.netlify.app/_ipx/s_1410x870/https://d2ahiw9kb7is19.cloudfront.net/-/media/66778D9BC88C487692315ED3D05E57A9.jpg%3Fd=20171113T074017',
-    'https://mh-de.netlify.app/_ipx/s_1410x870/https://d2ahiw9kb7is19.cloudfront.net/-/media/15BB510FFC5446C8A08E82B2F1C1017E.jpg%3Fd=20171113T074018',
-    'https://mh-de.netlify.app/_ipx/s_1410x870/https://d2ahiw9kb7is19.cloudfront.net/-/media/F399992B5F794FB3A9DAA1D8455B1CC7.jpg%3Fd=20171113T074018',
-    'https://mh-de.netlify.app/_ipx/s_1410x870/https://d2ahiw9kb7is19.cloudfront.net/-/media/F5184648084B475FA835ED8BFA47DA6A.jpg%3Fd=20171113T074012'
+    'https://cdn.pixabay.com/photo/2014/05/16/04/13/log-huts-345360_1280.jpg',
+    'https://bukitvista-wordpress-storage.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-08-at-15.02.08.png',
+    'https://motogo.vn/wp-content/uploads/2023/05/homestay-kon-tum-40.jpg',
+    'https://cf.bstatic.com/xdata/images/hotel/max1024x768/406023161.jpg?k=31be8fcb8f7feb6cc33b055eeb9abd7f65b8659ce70c55083a2b89dfda797fa3&o=&hp=1',
+    'https://diadiembaoloc.net/wp-content/uploads/2021/07/boong-house-home-stay-bao-loc-22.jpg',
+    'https://ik.imagekit.io/tvlk/blog/2022/04/homestay-da-lat-view-dep-1.jpeg',
+    'https://cdn.pixabay.com/photo/2014/05/16/04/13/log-huts-345360_1280.jpg',
+    'https://bukitvista-wordpress-storage.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-08-at-15.02.08.png',
+    'https://motogo.vn/wp-content/uploads/2023/05/homestay-kon-tum-40.jpg',
+    'https://cf.bstatic.com/xdata/images/hotel/max1024x768/406023161.jpg?k=31be8fcb8f7feb6cc33b055eeb9abd7f65b8659ce70c55083a2b89dfda797fa3&o=&hp=1',
+    'https://diadiembaoloc.net/wp-content/uploads/2021/07/boong-house-home-stay-bao-loc-22.jpg',
+    'https://ik.imagekit.io/tvlk/blog/2022/04/homestay-da-lat-view-dep-1.jpeg',
 ]);
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .vueper-slides-item {
     margin-right: 10px;
+}
+
+.vueperslides__arrow {
+    background-color: #151c2e !important;
+    padding: 0px 10px !important;
+}
+
+.vueperslides__arrow svg {
+    width: 3em !important;
 }
 </style>

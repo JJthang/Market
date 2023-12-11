@@ -2,9 +2,9 @@
   "dataRoom": [
     {
       "id": 1,
-      "images" : ["https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216101/wordpress_thumb_MDX_1_1280_720.jpg", 
-      "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216613/wordpress_thumb_KFR_1_1280_720.jpg",
-      "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216610/wordpress_thumb_KCS_1_1280_720.jpg"],
+      "images" : ["https://cdn.pixabay.com/photo/2014/05/16/04/13/log-huts-345360_1280.jpg", 
+      "https://bukitvista-wordpress-storage.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-08-at-15.02.08.png",
+      "https://bukitvista-wordpress-storage.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-08-at-15.02.08.png"],
       "convenient": [
         {
           "value" : "1 Person Min",
@@ -34,19 +34,19 @@
       "plan" : [
         {
           "id": 1,
-          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216255/wordpress_%25E8%25BF%25B7%25E3%2581%25A3%25E3%2581%259F%25E3%2582%2589%25E3%2582%25B3%25E3%2583%25AC_1_1280_720.jpg",
+          "images" : "https://static.vinwonders.com/production/homestay-la-gi-banner.jpg",
           "title" : "Feel free to walk around♪Room Without Meals Plan! Enjoy a relaxing holiday in Nasu Kogen☆",
           "price" : 15600,
           "sale" : 5 
         },{
           "id": 2,
-          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/244944/wordpress_%25E8%2587%25AA%25E7%25A4%25BE_%25E5%2592%258C%25E9%25A3%259F.jpg",
+          "images" : "https://vinhomesland.vn/wp-content/uploads/2020/06/mama-house-homestay.jpg",
           "title" : "Feel free to walk around♪ For those who want to have dinner out without worrying about the time★Buffet Plan with Resort Breakfast★",
           "price" : 18600,
           "sale" : 8
         },{
           "id": 3,
-          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/233862/wordpress_%25E5%25A4%2596%25E8%25A6%25B3_%25E5%25A4%258F_1280_720.jpg",
+          "images" : "https://cf.bstatic.com/xdata/images/hotel/max1024x768/406023161.jpg?k=31be8fcb8f7feb6cc33b055eeb9abd7f65b8659ce70c55083a2b89dfda797fa3&o=&hp=1",
           "title" : "【No.1 in our hotel's popularity】 When in doubt, this is the one! 90 kinds of Japanese, Chinese, and Western dishes are served at the buffet.",
           "price" : 19500,
           "sale" : 6
@@ -55,9 +55,9 @@
     },
     {
       "id": 2,
-      "images" : ["https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216101/wordpress_thumb_MDX_1_1280_720.jpg", 
-      "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216613/wordpress_thumb_KFR_1_1280_720.jpg",
-      "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216610/wordpress_thumb_KCS_1_1280_720.jpg"],
+      "images" : ["https://cdn.pixabay.com/photo/2014/05/16/04/13/log-huts-345360_1280.jpg", 
+      "https://bukitvista-wordpress-storage.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-08-at-15.02.08.png",
+      "https://bukitvista-wordpress-storage.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-08-at-15.02.08.png"],
       "convenient": [
         {
           "value" : "2 Person Min",
@@ -87,19 +87,19 @@
       "plan" : [
         {
           "id": 1,
-          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216255/wordpress_%25E8%25BF%25B7%25E3%2581%25A3%25E3%2581%259F%25E3%2582%2589%25E3%2582%25B3%25E3%2583%25AC_1_1280_720.jpg",
+          "images" : "https://static.vinwonders.com/production/homestay-la-gi-banner.jpg",
           "title" : "Feel free to walk around♪Room Without Meals Plan! Enjoy a relaxing holiday in Nasu Kogen☆",
           "price" : 15600,
           "sale" : 5 
         },{
           "id": 2,
-          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/244944/wordpress_%25E8%2587%25AA%25E7%25A4%25BE_%25E5%2592%258C%25E9%25A3%259F.jpg",
+          "images" : "https://storage.googleapis.com/digital-platform/hinh_anh_bat_mi_y_tuong_thiet_ke_homestay_doc_dao_hut_khach_so_1_12dc91aaa7/hinh_anh_bat_mi_y_tuong_thiet_ke_homestay_doc_dao_hut_khach_so_1_12dc91aaa7.jpg",
           "title" : "Feel free to walk around♪ For those who want to have dinner out without worrying about the time★Buffet Plan with Resort Breakfast★",
           "price" : 18600,
           "sale" : 8
         },{
           "id": 3,
-          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/233862/wordpress_%25E5%25A4%2596%25E8%25A6%25B3_%25E5%25A4%258F_1280_720.jpg",
+          "images" : "https://chefjob.vn/wp-content/uploads/2020/04/homestay-duoc-nhieu-du-khach-lua-chon.jpg",
           "title" : "【No.1 in our hotel's popularity】 When in doubt, this is the one! 90 kinds of Japanese, Chinese, and Western dishes are served at the buffet.",
           "price" : 19500,
           "sale" : 6
@@ -108,9 +108,9 @@
     },
     {
       "id": 3,
-      "images" : ["https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216101/wordpress_thumb_MDX_1_1280_720.jpg", 
-      "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216613/wordpress_thumb_KFR_1_1280_720.jpg",
-      "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216610/wordpress_thumb_KCS_1_1280_720.jpg"],
+      "images" : ["https://cdn.pixabay.com/photo/2014/05/16/04/13/log-huts-345360_1280.jpg", 
+      "https://bukitvista-wordpress-storage.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-08-at-15.02.08.png",
+      "https://bukitvista-wordpress-storage.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-08-at-15.02.08.png"],
       "convenient": [
         {
           "value" : "1 Person Min",
@@ -140,19 +140,19 @@
       "plan" : [
         {
           "id": 1,
-          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216255/wordpress_%25E8%25BF%25B7%25E3%2581%25A3%25E3%2581%259F%25E3%2582%2589%25E3%2582%25B3%25E3%2583%25AC_1_1280_720.jpg",
+          "images" : "https://cdn.tgdd.vn/Files/2022/01/19/1411730/8-homestay-mien-bac-sieu-dep-re-cho-dip-nghi-tet-nham-dan-2022-202201191812116123.jpg",
           "title" : "Feel free to walk around♪Room Without Meals Plan! Enjoy a relaxing holiday in Nasu Kogen☆",
           "price" : 15600,
           "sale" : 5 
         },{
           "id": 2,
-          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/244944/wordpress_%25E8%2587%25AA%25E7%25A4%25BE_%25E5%2592%258C%25E9%25A3%259F.jpg",
+          "images" : "https://ik.imagekit.io/bbhed67kj/wp-content/uploads/2019/01/Bisle-Nature-Trail-Homestay-1.jpg",
           "title" : "Feel free to walk around♪ For those who want to have dinner out without worrying about the time★Buffet Plan with Resort Breakfast★",
           "price" : 18600,
           "sale" : 8
         },{
           "id": 3,
-          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/233862/wordpress_%25E5%25A4%2596%25E8%25A6%25B3_%25E5%25A4%258F_1280_720.jpg",
+          "images" : "https://minhphatpc.vn/wp-content/uploads/2022/01/chi-phi-xay-dung-1-homestay-2.jpg",
           "title" : "【No.1 in our hotel's popularity】 When in doubt, this is the one! 90 kinds of Japanese, Chinese, and Western dishes are served at the buffet.",
           "price" : 19500,
           "sale" : 6

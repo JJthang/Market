@@ -33,12 +33,13 @@
                             icon: {
                                 class: 'text-[#1a489c]',
                             },
-                        }" iconPos="right" class="bg-white border border-[#d1d5db] h-[2.7rem]" icon="pi pi-sliders-h" />
+                        }" iconPos="right" class="bg-white border border-[#d1d5db] h-[2.7rem]"
+                            icon="pi pi-sliders-h" />
                     </div>
                     <div class="flex">
                         <button v-for="(item, index) in taps" @click="currentTap = index" :key="index"
                             class="lg:px-3 py-1.5 border border-border text-secondary w-[90px] text-xs" :class="([index == 0 ? 'rounded-l-[5px]' : 'rounded-r-[5px]'],
-                                    { 'bg-[#232e48] text-white': index == currentTap })
+                                { 'bg-[#232e48] text-white': index == currentTap })
                                 ">
                             {{ item }}
                         </button>
@@ -52,7 +53,7 @@
             </div>
             <div class="mt-4">
                 <div class="flex flex-col my-5" v-for="(item, index) in data" :key="index">
-                    <Itemlist :item="item" :index="index" />
+                    <Itemlist :item="item" :index="index" class="transition-all" />
                 </div>
             </div>
             <div class="flex justify-center lg:mt-16">

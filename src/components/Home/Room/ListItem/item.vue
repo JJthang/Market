@@ -33,18 +33,19 @@
                             <img :src="slotProps.item" :alt="slotProps.item.alt" style="display: block" />
                         </template>
                     </Galleria>
-                    <figure class="w-full h-full" alt="" @click="displayBasic = true">
+                    <figure class="w-full h-full relative" alt="" @click="displayBasic = true">
                         <img class="w-full h-full" :src="`${item.images[index]}`" alt="">
+                        <div class="flex absolute top-0 py-2 px-2 fjc gap-2 bg-[#FFD25D]">
+                            <i class="fa-solid fa-medal text-xs"></i>
+                            <span class="text-[#000000] text-[10px] font-sans font-bold">Earn 231 Points</span>
+                        </div>
+                        <div class="flex absolute bottom-0 right-0 py-2 px-2 fjc gap-2 bg-[#232E48]">
+                            <i class="pi pi-camera text-xs text-white"></i>
+                            <span class="text-white text-[10px] font-sans font-bold">1 / {{ item.images.length }}</span>
+                        </div>
                     </figure>
                 </div>
-                <div class="flex absolute top-0 py-2 px-2 fjc gap-2 bg-[#FFD25D]">
-                    <i class="fa-solid fa-medal text-xs"></i>
-                    <span class="text-[#000000] text-[10px] font-sans font-bold">Earn 231 Points</span>
-                </div>
-                <div class="flex absolute bottom-[9px] right-0 py-2 px-2 fjc gap-2 bg-[#232E48]">
-                    <i class="pi pi-camera text-xs text-white"></i>
-                    <span class="text-white text-[10px] font-sans font-bold">1 / {{ item.images.length }}</span>
-                </div>
+
             </div>
             <div class="flex-1 lg:px-6 mt-2 hidden lg:block">
                 <div class="gridContainer">
@@ -95,7 +96,7 @@
                 <div class="flex py-4 border-t" v-for="itemPlan in item.plan">
                     <div class="w-[175px] hidden lg:block">
                         <figure>
-                            <img class="" :src="`${itemPlan.images}`" alt="">
+                            <img class="w-full h-[120px]" :src="`${itemPlan.images}`" alt="">
                         </figure>
                     </div>
                     <div class="flex-1 lg:pl-4 lg:pr-12">
