@@ -6,8 +6,8 @@
                 <div class="w-6/12">
                     {{
                         lengthString
-                        ? checkSubString(text)
-                        : checkSubString(text, text.length)
+                        ? checkSubString(text, text.length)
+                        : checkSubString(text)
                     }}
                     <span class="text-secondary text-[#1a489c] ml-2.5 font-bold text-13 lg:text-15 lg:cursor-pointer"
                         @click="readMore">

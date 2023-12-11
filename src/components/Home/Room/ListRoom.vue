@@ -55,9 +55,8 @@
                             } -->
                     <div class="flex">
                         <button v-for="(item, index) in taps" @click="currentTap = index" :key="index"
-                            class="lg:px-3 py-1.5 border border-border text-secondary w-[90px] text-xs" :class="([index == 0 ? 'rounded-l-[5px]' : 'rounded-r-[5px]'],
-                                { 'bg-[#232e48] text-white': index == currentTap })
-                                ">
+                            class="lg:px-3 py-1.5 border border-border text-secondary w-[90px] text-xs" :class="[index == 0 ? 'rounded-l-[5px]' : 'rounded-r-[5px]'],
+                                { 'bg-[#232e48] text-white': index == currentTap }">
                             {{ item }}
                         </button>
                     </div>
@@ -101,13 +100,174 @@ const cities = ref([
 const taps = ["Rooms", "Plans"];
 const currentTap = ref(0);
 const loadMore = ref(2);
+const data = ref([
+    {
+        "id": 1,
+        "images": ["https://cdn.pixabay.com/photo/2014/05/16/04/13/log-huts-345360_1280.jpg",
+            "https://bukitvista-wordpress-storage.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-08-at-15.02.08.png",
+            "https://bukitvista-wordpress-storage.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-08-at-15.02.08.png"],
+        "convenient": [
+            {
+                "value": "1 Person Min",
+                "icon": "fa-solid fa-user-group"
+            }, {
+                "value": "2 Person Max",
+                "icon": "fa-solid fa-user-group"
+            }, {
+                "value": "1200(mm) : 2 beds",
+                "icon": "fa-solid fa-bed"
+            }, {
+                "value": "Smoking",
+                "icon": "fa-solid fa-smoking"
+            }, {
+                "value": "Room size 29m²",
+                "icon": "fa-solid fa-building"
+            }, {
+                "value": "bathRoom",
+                "icon": "fa-solid fa-bath"
+            }, {
+                "value": "Toilet",
+                "icon": "fa-solid fa-toilet"
+            }
+        ],
+        "price": 28000,
+        "sale": 5,
+        "plan": [
+            {
+                "id": 1,
+                "images": "https://static.vinwonders.com/production/homestay-la-gi-banner.jpg",
+                "title": "Feel free to walk around♪Room Without Meals Plan! Enjoy a relaxing holiday in Nasu Kogen☆",
+                "price": 15600,
+                "sale": 5
+            }, {
+                "id": 2,
+                "images": "https://vinhomesland.vn/wp-content/uploads/2020/06/mama-house-homestay.jpg",
+                "title": "Feel free to walk around♪ For those who want to have dinner out without worrying about the time★Buffet Plan with Resort Breakfast★",
+                "price": 18600,
+                "sale": 8
+            }, {
+                "id": 3,
+                "images": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/406023161.jpg?k=31be8fcb8f7feb6cc33b055eeb9abd7f65b8659ce70c55083a2b89dfda797fa3&o=&hp=1",
+                "title": "【No.1 in our hotel's popularity】 When in doubt, this is the one! 90 kinds of Japanese, Chinese, and Western dishes are served at the buffet.",
+                "price": 19500,
+                "sale": 6
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "images": ["https://cdn.pixabay.com/photo/2014/05/16/04/13/log-huts-345360_1280.jpg",
+            "https://bukitvista-wordpress-storage.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-08-at-15.02.08.png",
+            "https://bukitvista-wordpress-storage.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-08-at-15.02.08.png"],
+        "convenient": [
+            {
+                "value": "2 Person Min",
+                "icon": "fa-solid fa-user-group"
+            }, {
+                "value": "4 Person Max",
+                "icon": "fa-solid fa-user-group"
+            }, {
+                "value": "2400(mm) : 2 beds",
+                "icon": "fa-solid fa-bed"
+            }, {
+                "value": "Smoking",
+                "icon": "fa-solid fa-smoking"
+            }, {
+                "value": "Room size 29m²",
+                "icon": "fa-solid fa-building"
+            }, {
+                "value": "bathRoom",
+                "icon": "fa-solid fa-bath"
+            }, {
+                "value": "Toilet",
+                "icon": "fa-solid fa-toilet"
+            }
+        ],
+        "price": 15000,
+        "sale": 5,
+        "plan": [
+            {
+                "id": 1,
+                "images": "https://static.vinwonders.com/production/homestay-la-gi-banner.jpg",
+                "title": "Feel free to walk around♪Room Without Meals Plan! Enjoy a relaxing holiday in Nasu Kogen☆",
+                "price": 15600,
+                "sale": 5
+            }, {
+                "id": 2,
+                "images": "https://storage.googleapis.com/digital-platform/hinh_anh_bat_mi_y_tuong_thiet_ke_homestay_doc_dao_hut_khach_so_1_12dc91aaa7/hinh_anh_bat_mi_y_tuong_thiet_ke_homestay_doc_dao_hut_khach_so_1_12dc91aaa7.jpg",
+                "title": "Feel free to walk around♪ For those who want to have dinner out without worrying about the time★Buffet Plan with Resort Breakfast★",
+                "price": 18600,
+                "sale": 8
+            }, {
+                "id": 3,
+                "images": "https://chefjob.vn/wp-content/uploads/2020/04/homestay-duoc-nhieu-du-khach-lua-chon.jpg",
+                "title": "【No.1 in our hotel's popularity】 When in doubt, this is the one! 90 kinds of Japanese, Chinese, and Western dishes are served at the buffet.",
+                "price": 19500,
+                "sale": 6
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "images": ["https://cdn.pixabay.com/photo/2014/05/16/04/13/log-huts-345360_1280.jpg",
+            "https://bukitvista-wordpress-storage.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-08-at-15.02.08.png",
+            "https://bukitvista-wordpress-storage.s3.us-east-2.amazonaws.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-08-at-15.02.08.png"],
+        "convenient": [
+            {
+                "value": "1 Person Min",
+                "icon": "fa-solid fa-user-group"
+            }, {
+                "value": "3 Person Max",
+                "icon": "fa-solid fa-user-group"
+            }, {
+                "value": "1700(mm) : 2 beds",
+                "icon": "fa-solid fa-bed"
+            }, {
+                "value": "Smoking",
+                "icon": "fa-solid fa-smoking"
+            }, {
+                "value": "Room size 35m²",
+                "icon": "fa-solid fa-building"
+            }, {
+                "value": "bathRoom",
+                "icon": "fa-solid fa-bath"
+            }, {
+                "value": "Toilet",
+                "icon": "fa-solid fa-toilet"
+            }
+        ],
+        "price": 15000,
+        "sale": 5,
+        "plan": [
+            {
+                "id": 1,
+                "images": "https://cdn.tgdd.vn/Files/2022/01/19/1411730/8-homestay-mien-bac-sieu-dep-re-cho-dip-nghi-tet-nham-dan-2022-202201191812116123.jpg",
+                "title": "Feel free to walk around♪Room Without Meals Plan! Enjoy a relaxing holiday in Nasu Kogen☆",
+                "price": 15600,
+                "sale": 5
+            }, {
+                "id": 2,
+                "images": "https://ik.imagekit.io/bbhed67kj/wp-content/uploads/2019/01/Bisle-Nature-Trail-Homestay-1.jpg",
+                "title": "Feel free to walk around♪ For those who want to have dinner out without worrying about the time★Buffet Plan with Resort Breakfast★",
+                "price": 18600,
+                "sale": 8
+            }, {
+                "id": 3,
+                "images": "https://minhphatpc.vn/wp-content/uploads/2022/01/chi-phi-xay-dung-1-homestay-2.jpg",
+                "title": "【No.1 in our hotel's popularity】 When in doubt, this is the one! 90 kinds of Japanese, Chinese, and Western dishes are served at the buffet.",
+                "price": 19500,
+                "sale": 6
+            }
+        ]
+    }
+])
 
-const { data } = useQuery({
-    queryKey: ["getData", loadMore],
-    queryFn: () => fetchProduct(loadMore.value),
-    select: (data) => data.data,
-    keepPreviousData: true,
-});
+// const { data } = useQuery({
+//     queryKey: ["getData", loadMore],
+//     queryFn: () => fetchProduct(loadMore.value),
+//     select: (data) => data.data,
+//     keepPreviousData: true,
+// });
 </script>
 
 <style lang="scss" scoped>
