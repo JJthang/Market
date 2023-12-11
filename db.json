@@ -1,0 +1,163 @@
+{
+  "dataRoom": [
+    {
+      "id": 1,
+      "images" : ["https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216101/wordpress_thumb_MDX_1_1280_720.jpg", 
+      "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216613/wordpress_thumb_KFR_1_1280_720.jpg",
+      "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216610/wordpress_thumb_KCS_1_1280_720.jpg"],
+      "convenient": [
+        {
+          "value" : "1 Person Min",
+          "icon" : "fa-solid fa-user-group"
+        }, {
+          "value" : "2 Person Max",
+          "icon" : "fa-solid fa-user-group"
+        },{
+          "value" : "1200(mm) : 2 beds",
+          "icon" : "fa-solid fa-bed"
+        },{
+          "value" : "Smoking",
+          "icon" : "fa-solid fa-smoking"
+        },{
+          "value" : "Room size 29m²",
+          "icon" : "fa-solid fa-building"
+        },{
+          "value" : "bathRoom",
+          "icon" : "fa-solid fa-bath"
+        },{
+          "value" : "Toilet",
+          "icon" : "fa-solid fa-toilet"
+        }
+      ],
+      "price" :  28000,
+      "sale" : 5, 
+      "plan" : [
+        {
+          "id": 1,
+          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216255/wordpress_%25E8%25BF%25B7%25E3%2581%25A3%25E3%2581%259F%25E3%2582%2589%25E3%2582%25B3%25E3%2583%25AC_1_1280_720.jpg",
+          "title" : "Feel free to walk around♪Room Without Meals Plan! Enjoy a relaxing holiday in Nasu Kogen☆",
+          "price" : 15600,
+          "sale" : 5 
+        },{
+          "id": 2,
+          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/244944/wordpress_%25E8%2587%25AA%25E7%25A4%25BE_%25E5%2592%258C%25E9%25A3%259F.jpg",
+          "title" : "Feel free to walk around♪ For those who want to have dinner out without worrying about the time★Buffet Plan with Resort Breakfast★",
+          "price" : 18600,
+          "sale" : 8
+        },{
+          "id": 3,
+          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/233862/wordpress_%25E5%25A4%2596%25E8%25A6%25B3_%25E5%25A4%258F_1280_720.jpg",
+          "title" : "【No.1 in our hotel's popularity】 When in doubt, this is the one! 90 kinds of Japanese, Chinese, and Western dishes are served at the buffet.",
+          "price" : 19500,
+          "sale" : 6
+        }
+      ] 
+    },
+    {
+      "id": 2,
+      "images" : ["https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216101/wordpress_thumb_MDX_1_1280_720.jpg", 
+      "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216613/wordpress_thumb_KFR_1_1280_720.jpg",
+      "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216610/wordpress_thumb_KCS_1_1280_720.jpg"],
+      "convenient": [
+        {
+          "value" : "2 Person Min",
+          "icon" : "fa-solid fa-user-group"
+        }, {
+          "value" : "4 Person Max",
+          "icon" : "fa-solid fa-user-group"
+        },{
+          "value" : "2400(mm) : 2 beds",
+          "icon" : "fa-solid fa-bed"
+        },{
+          "value" : "Smoking",
+          "icon" : "fa-solid fa-smoking"
+        },{
+          "value" : "Room size 29m²",
+          "icon" : "fa-solid fa-building"
+        },{
+          "value" : "bathRoom",
+          "icon" : "fa-solid fa-bath"
+        },{
+          "value" : "Toilet",
+          "icon" : "fa-solid fa-toilet"
+        }
+      ],
+      "price" : 15000,
+      "sale" : 5, 
+      "plan" : [
+        {
+          "id": 1,
+          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216255/wordpress_%25E8%25BF%25B7%25E3%2581%25A3%25E3%2581%259F%25E3%2582%2589%25E3%2582%25B3%25E3%2583%25AC_1_1280_720.jpg",
+          "title" : "Feel free to walk around♪Room Without Meals Plan! Enjoy a relaxing holiday in Nasu Kogen☆",
+          "price" : 15600,
+          "sale" : 5 
+        },{
+          "id": 2,
+          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/244944/wordpress_%25E8%2587%25AA%25E7%25A4%25BE_%25E5%2592%258C%25E9%25A3%259F.jpg",
+          "title" : "Feel free to walk around♪ For those who want to have dinner out without worrying about the time★Buffet Plan with Resort Breakfast★",
+          "price" : 18600,
+          "sale" : 8
+        },{
+          "id": 3,
+          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/233862/wordpress_%25E5%25A4%2596%25E8%25A6%25B3_%25E5%25A4%258F_1280_720.jpg",
+          "title" : "【No.1 in our hotel's popularity】 When in doubt, this is the one! 90 kinds of Japanese, Chinese, and Western dishes are served at the buffet.",
+          "price" : 19500,
+          "sale" : 6
+        }
+      ] 
+    },
+    {
+      "id": 3,
+      "images" : ["https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216101/wordpress_thumb_MDX_1_1280_720.jpg", 
+      "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216613/wordpress_thumb_KFR_1_1280_720.jpg",
+      "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216610/wordpress_thumb_KCS_1_1280_720.jpg"],
+      "convenient": [
+        {
+          "value" : "1 Person Min",
+          "icon" : "fa-solid fa-user-group"
+        }, {
+          "value" : "3 Person Max",
+          "icon" : "fa-solid fa-user-group"
+        },{
+          "value" : "1700(mm) : 2 beds",
+          "icon" : "fa-solid fa-bed"
+        },{
+          "value" : "Smoking",
+          "icon" : "fa-solid fa-smoking"
+        },{
+          "value" : "Room size 35m²",
+          "icon" : "fa-solid fa-building"
+        },{
+          "value" : "bathRoom",
+          "icon" : "fa-solid fa-bath"
+        },{
+          "value" : "Toilet",
+          "icon" : "fa-solid fa-toilet"
+        }
+      ],
+      "price" : 15000,
+      "sale" : 5, 
+      "plan" : [
+        {
+          "id": 1,
+          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/216255/wordpress_%25E8%25BF%25B7%25E3%2581%25A3%25E3%2581%259F%25E3%2582%2589%25E3%2582%25B3%25E3%2583%25AC_1_1280_720.jpg",
+          "title" : "Feel free to walk around♪Room Without Meals Plan! Enjoy a relaxing holiday in Nasu Kogen☆",
+          "price" : 15600,
+          "sale" : 5 
+        },{
+          "id": 2,
+          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/244944/wordpress_%25E8%2587%25AA%25E7%25A4%25BE_%25E5%2592%258C%25E9%25A3%259F.jpg",
+          "title" : "Feel free to walk around♪ For those who want to have dinner out without worrying about the time★Buffet Plan with Resort Breakfast★",
+          "price" : 18600,
+          "sale" : 8
+        },{
+          "id": 3,
+          "images" : "https://mh-de.netlify.app/_ipx/_/https://cdn0.tripla.ai/assets/chatbot_image/picture/233862/wordpress_%25E5%25A4%2596%25E8%25A6%25B3_%25E5%25A4%258F_1280_720.jpg",
+          "title" : "【No.1 in our hotel's popularity】 When in doubt, this is the one! 90 kinds of Japanese, Chinese, and Western dishes are served at the buffet.",
+          "price" : 19500,
+          "sale" : 6
+        }
+      ] 
+    }
+  ]
+}

@@ -3,6 +3,8 @@ import "./assets/main.css";
 import "primevue/resources/themes/lara-light-green/theme.css";
 import "primevue/resources/primevue.min.css"; /* Deprecated */
 import "primeicons/primeicons.css";
+import "vueperslides/dist/vueperslides.css";
+import { register } from "swiper/element/bundle";
 
 import { createApp } from "vue";
 import { createPinia } from "pinia";
@@ -214,5 +216,6 @@ app.component("TreeSelect", TreeSelect);
 app.component("TreeTable", TreeTable);
 app.component("TriStateCheckbox", TriStateCheckbox);
 app.component("VirtualScroller", VirtualScroller);
+register();
 
 app.mount("#app");

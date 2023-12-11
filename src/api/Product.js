@@ -1,5 +1,6 @@
 import axios from "axios";
 
-export const fetchOneProduct = (id) => {
-  return axios.get("https://dummyjson.com/products/" + id);
+export const fetchProduct = (limit) => {
+  console.log(limit);
+  return axios.get(`http://localhost:3000/dataRoom/?_limit=${limit}&_page=1`);
 };
