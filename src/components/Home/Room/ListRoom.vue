@@ -43,17 +43,6 @@
                         }" iconPos="right" class="bg-white border border-[#d1d5db] h-[2.7rem]"
                             icon="pi pi-sliders-h" />
                     </div>
-                    <!-- class: 'fjc'
-                            },
-                            label: {
-                                class: 'font-medium text-[#1a489c] text-[10px] ',
-                            },
-                            icon: {
-                                class: 'text-[#1a489c]',
-                            },
-                            icon: {
-                                class: 'lg:block hidden lg:px-5 px-2'
-                            } -->
                     <div class="flex">
                         <button v-for="(item, index) in taps" @click="currentTap = index" :key="index"
                             class="lg:px-3 py-1.5 border border-border text-secondary w-[90px] text-xs" :class="[index == 0 ? 'rounded-l-[5px]' : 'rounded-r-[5px]'],
@@ -69,7 +58,7 @@
                 </h3>
             </div>
             <div class="mt-4">
-                <div class="flex flex-col my-5" v-for="(item, index) in data" :key="index">
+                <div class="flex flex-col my-5" v-for="(item, index) in dataSlice" :key="index">
                     <Itemlist :item="item" :index="index" class="transition-all" />
                 </div>
             </div>
@@ -85,7 +74,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch, onBeforeMount, onUpdated } from "vue";
 import Dropdown from "primevue/dropdown";
 import { useQuery } from "@tanstack/vue-query";
 import { fetchProduct } from "@/api/Product.js";
@@ -101,6 +90,7 @@ const cities = ref([
 const taps = ["Rooms", "Plans"];
 const currentTap = ref(0);
 const loadMore = ref(2);
+const dataSlice = ref([]);
 const data = ref([
     {
         "id": 1,
@@ -261,7 +251,14 @@ const data = ref([
             }
         ]
     }
-])
+]);
+onBeforeMount(() => {
+    dataSlice.value = data.value.slice(0, loadMore.value);
+})
+
+watch(loadMore, (vuewValue) => {
+    dataSlice.value = data.value.slice(0, vuewValue);
+})
 
 // const { data } = useQuery({
 //     queryKey: ["getData", loadMore],
@@ -269,6 +266,9 @@ const data = ref([
 //     select: (data) => data.data,
 //     keepPreviousData: true,
 // });
+
+
+
 </script>
 
 <style lang="scss" scoped>

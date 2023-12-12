@@ -30,38 +30,40 @@
                                     alt="">
                             </a>
                         </div>
-                        <div class="flex justify-between items-center md:w-[55%] gap-2 order-2 pb-4 lg:pb-0 lg:order-1">
+                        <div class="flex justify-between items-center md:w-[55%] gap-3 order-2 pb-4 lg:pb-0 lg:order-1">
                             <div
-                                class="flex justify-start items-center gap-3 bg-[#FFFFFF] px-3 md:px-6 py-[10px] lg:px-3 rounded-sm">
+                                class="flex justify-start items-center gap-3 bg-[#FFFFFF] px-2 md:px-6 py-[10px] lg:px-3 rounded-sm">
                                 <a href="" class="fjc">
                                     <span class="pi pi-calendar text-[#1A489C] font-semibold pr-2 lg:block hidden"></span>
-                                    <span class="text-[#1A489C] font-semibold lg:text-base text-[12px]">Dec 10 - Dec 11
+                                    <span class="text-[#1A489C] font-semibold lg:text-sm text-[12px]">Dec 10 - Dec 11
                                     </span>
                                 </a>
                             </div>
                             <div
-                                class="flex justify-start items-center gap-3 bg-[#FFFFFF] px-3 md:px-6 lg:px-3 py-[10px] rounded-sm">
+                                class="flex justify-start items-center gap-3 bg-[#FFFFFF] px-2 md:px-6 lg:px-3 py-[10px] rounded-sm">
                                 <a href="" class="fjc">
                                     <span
                                         class="fa-solid fa-user-group text-[#1A489C] font-semibold pr-2 lg:block hidden"></span>
-                                    <span class="text-[#1A489C] font-semibold lg:text-base text-[12px]">1 Room, 2 Guests
+                                    <span class="text-[#1A489C] font-semibold lg:text-sm text-[12px]">1 Room, 2 Guests
                                     </span>
                                 </a>
                             </div>
                             <div
-                                class="flex justify-start items-center gap-3 bg-[#FFFFFF] md:px-6  px-3 py-[10px] rounded-sm">
+                                class="flex justify-start items-center gap-3 bg-[#FFFFFF] md:px-6  px-2 py-[10px] rounded-sm">
                                 <span class="fa-solid fa-tag text-[#1A489C] font-semibold lg:block hidden"></span>
-                                <span class="text-[#1A489C] font-semibold lg:text-base text-[12px]">+ Add Promo</span>
+                                <span class="text-[#1A489C] font-semibold lg:text-sm text-[12px]">+ Add Promo</span>
                             </div>
                         </div>
-                        <div class="flex  justify-between items-center gap-[90px] md:gap-0 pb-3 order-1 lg:order-2 ">
+                        <div
+                            class="flex  justify-between lg:pt-3 items-center gap-[75px] md:gap-0 pb-3 order-1 lg:order-2 ">
                             <div class="flex justify-center items-center gap-2 mr-10">
                                 <span class="pi pi-user text-white mr-1"></span>
                                 <span class="text-[#FFD25D]">Login</span>
                                 <span class="text-[#FFD25D]">or</span>
                                 <span class="text-[#FFD25D]">Join</span>
                             </div>
-                            <a href="/"><span class="pi pi-phone text-base text-white lg:block hidden"></span></a>
+                            <a href="/">
+                                <span class="pi pi-phone text-base text-white lg:block hidden lg:pr-2"></span></a>
                             <div class="flex items-center">
                                 <span class="pi pi-bars text-base cursor-pointer text-white"></span>
                             </div>
@@ -79,7 +81,6 @@
 
 <style lang="scss" scoped>
 .stick {
-    // sticky top-0 z-50
     position: sticky;
     top: 0;
     z-index: 50px;
