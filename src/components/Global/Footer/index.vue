@@ -1,6 +1,6 @@
 <template>
     <footer class="bg-[#232E48] pt-3 pb-7 lg:py-4 text-white fjc">
-        <div class="w-full lg:w-[75%] flex justify-between lg:gap-0 gap-4 lg:flex-row flex-col items-center">
+        <div class="lg:w-[60%] md:w-[90%] flex justify-between lg:gap-0 gap-4 lg:flex-row flex-col items-center">
             <div class="flex lg:flex-row flex-col items-center">
                 <a href="/">
                     <img class="lg:w-36 w-40"

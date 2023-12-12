@@ -2,7 +2,7 @@
     <div class="w-full lg:block hidden">
         <div class="w-full py-5">
             <div class="w-full fjc">
-                <div class="w-[75%] flex justify-between items-center">
+                <div class="w-[75%] md:w-[90%] lg:w-[60%] flex justify-between items-center">
                     <div class="flex flex-col gap-3">
                         <h3 class="text-lg lg:text-2xl text-center lg:text-left font-bold mb-2">Hotel Epinard Nasu</h3>
                         <div class="flex items-center gap-2">
@@ -28,8 +28,9 @@
     </div>
     <div class="w-full">
         <!-- thumbnails -->
-        <vueper-slides class="no-shadow thumbnails" :visible-slides="3" :gap="2" :arrows-outside="false" ref="vueperslides1"
-            :bullets="false" :slideMultiple="false" @slide="handleSlideChange" :slide-ratio="1 / 4" :dragging-distance="70">
+        <vueper-slides class="no-shadow thumbnails" :visible-slides="windowScreen <= 700 ? 1 : 3" :gap="2"
+            :arrows-outside="false" ref="vueperslides1" :bullets="false" :slideMultiple="false" @slide="handleSlideChange"
+            :slide-ratio="windowScreen <= 700 ? 2 / 4 : 1 / 4" :dragging-distance="70">
             <vueper-slide v-for="(slide, i) in images" :key="i" :image="slide"
                 :style="{ opacity: (currentSlide === i ? '1' : '.2') }" @click.native="$refs.vueperslides2.goToSlide(i)"
                 class="gap-5" />
@@ -39,10 +40,22 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css';
-const currentSlide = ref(1);
+const currentSlide = ref(window.innerWidth <= 700 ? 0 : 1);
+const windowScreen = ref(window.innerWidth);
+
+onMounted(() => {
+    window.addEventListener('resize', value => {
+        windowScreen.value = window.innerWidth
+    });
+    console.log(windowScreen.value);
+});
+onUnmounted(() => {
+    window.removeEventListener('resize', () => { windowScreen.value = window.innerWidth })
+})
+
 
 const handleSlideChange = (event) => {
     currentSlide.value = event.currentSlide.index;

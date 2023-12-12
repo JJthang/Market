@@ -1,15 +1,16 @@
 <template>
     <div class="w-full fjc mt-2 border-b border-[#dddee0] bg-[#FFFFFF] sticky lg:top-[158px] z-10">
-        <ul class="w-[95%] lg:w-[75%] flex aaaa" @click="handTakeElement">
+        <ul class="w-[95%] lg:w-[60%] flex" @click="handTakeElement">
             <li v-for="(item, index) in tabs" @click="currentTab = index" id="hotel-tab"
                 class="w-full cursor-pointer py-3 text-center"
                 :class="{ 'border-b-4 border-[#1A489C]': currentTab === index }">
-                <span class="text-[#1A489C] font-bold lg:text-[20px] text-base">{{ item }}</span>
+                <span class="text-[#1A489C] font-bold lg:text-[20px] text-xs">{{ item }}</span>
             </li>
         </ul>
     </div>
     <div class="w-full fjc">
-        <div class="pt-3 pb-7 lg:py-4 text-white fjc lg:w-[75%] flex lg:justify-between lg:flex-row flex-col py-6 gap-10">
+        <div
+            class="pt-3 pb-7 lg:py-4 text-white fjc lg:w-[60%] md:w-[90%] flex lg:justify-between lg:flex-row flex-col py-6 gap-10">
             <div class="w-full lg:w-7/12">
                 <div class="overflow-hidden" :class="[read ? 'h-auto' : 'h-[230px]']">
                     <div v-for="(item, index) in aboutUs" :key="index" class="py-1.5 text-sm text-black leading-7">

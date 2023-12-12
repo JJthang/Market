@@ -1,6 +1,6 @@
 <template>
     <div class="w-full fjc bg-[#F3F3F3]">
-        <div class="w-[95%] lg:w-[75%] py-6">
+        <div class="w-[95%] lg:w-[60%] md:w-[90%] py-6">
             <div class="w-full flex lg:flex-row flex-col justify-between">
                 <div
                     class="flex justify-start items-start lg:justify-center lg:items-center lg:flex-row flex-col gap-3 lg:gap-5 mb-3">
@@ -13,8 +13,8 @@
                         <label for="" class="text-[#1a489c] font-semibold text-[13px]">Show only validate</label>
                     </div>
                 </div>
-                <div class="flex gap-5">
-                    <div class="flex gap-3">
+                <div class="flex md:gap-5 gap-2 ">
+                    <div class="flex md:gap-3 gap-1">
                         <Dropdown iconPos="left" v-model="selectedCity" :options="cities" :pt="{
                             trigger: {
                                 class: 'pr-2 w-4 text-[#1a489c]',
@@ -24,8 +24,9 @@
                                     ' px-0 lg:py-2 py-2 lg:px-2 text-[15px] pt-[-3px] flex  item-center justify-center text-[#1a489c]',
                             },
                             root: {
-                                class: 'w-[2rem] lg:w-[3rem] text-[#1a489c] fjc',
+                                class: 'lg:w-[6rem] lg:py-1 text-[#1a489c] fjc',
                             },
+                            // fixWidth
                             // lg:fixWidth
                         }" optionLabel="name" placeholder="Sort by" class="w-full md:w-9rem" />
                         <Button label="Filter" :pt="{
@@ -294,6 +295,11 @@ input[type="checkbox"] {
 
 .p-dropdown .p-dropdown-label.p-placeholder {
     display: flex;
+}
+
+.fixWidth {
+    width: 6rem !important;
+    padding: 21px 0px !important;
 }
 
 .shadow-card {

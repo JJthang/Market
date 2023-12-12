@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="p-3 bg-white shadow-card pb-3 ">
-        <div class="flex gap-3">
+        <div class="flex gap-3 lg:flex-grow md:flex-col flex-col">
             <div class="lg:w-[250px] lg:h-[150px] lg:cursor-pointer relative">
                 <div class="card flex justify-center">
                     <Galleria v-model:visible="displayBasic" :value="item.images" :responsiveOptions="responsiveOptions"
@@ -45,9 +45,9 @@
                         </div>
                     </figure>
                 </div>
-
             </div>
-            <div class="flex-1 lg:px-2 mt-2 hidden lg:block">
+            <!-- hidden lg:block -->
+            <div class="flex-1 lg:px-2 mt-2 ">
                 <div class="gridContainer">
                     <div class="py-1 border-b border-[#dddee0] flex items-center"
                         v-for="(itemConven, index1) in item.convenient" :key="index1">
@@ -60,7 +60,8 @@
                     </div>
                 </div>
             </div>
-            <div class="w-[300px] hidden lg:block">
+            <!-- hidden lg:block -->
+            <div class="md:w-[300px] w-full">
                 <div>
                     <span class="text-red-400 text-[10px] font-bold">Rates From</span>
                     <div class="px-2 py-1 text-[11px] rounded-[5px] bg-[#e6ee9c] w-fit font-bold my-1">
