@@ -4,7 +4,7 @@
             <li v-for="(item, index) in tabs" @click="currentTab = index" id="hotel-tab"
                 class="w-full cursor-pointer py-3 text-center"
                 :class="{ 'border-b-4 border-[#1A489C]': currentTab === index }">
-                <span class="text-[#1A489C] font-bold lg:text-[20px] text-xs">{{ item }}</span>
+                <span class="text-[#1A489C] font-bold text-xs lg:text-[15px]">{{ item }}</span>
             </li>
         </ul>
     </div>

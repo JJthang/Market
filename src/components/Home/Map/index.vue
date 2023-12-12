@@ -14,9 +14,9 @@
                             Station</span>
                     </div>
                     <div class="fjc mt-5">
-                        <button
-                            class="w-full py-[10px] rounded-[4px] text-[#1A489C] font-semibold hover:bg-[#1A489C] hover:text-white transition-all border">Get
-                            Directions</button>
+                        <MyButton :classButton="'w-full text-[#1A489C] hover:bg-[#1A489C] hover:text-white'">
+                            Get
+                            Directions</MyButton>
                     </div>
                 </div>
             </div>
@@ -51,6 +51,7 @@
 </template>
 
 <script setup>
+import MyButton from "@/components/Button/index.vue";
 
 </script>
 

@@ -74,9 +74,9 @@
                             <p class="text-[12px] text-[#F5455A]">2 Adults / 1 night</p>
                         </div>
                         <div>
-                            <button class="btn_pink">Sign
+                            <MyButton :classButton="'btn_pink'">Sign
                                 in /
-                                up</button>
+                                up</MyButton>
                         </div>
                     </div>
                     <div class="py-2">
@@ -85,14 +85,13 @@
                                 Math.floor(item.price).toLocaleString('en-US').replace(',', '.') }}</p>
                             <p class="text-[12px]">2 Adults / 1 night</p>
                         </div>
-                        <button class="btn_plans transition-all" @click="handToggPlan(currenIndex = index, index)">See
-                            Plans</button>
+                        <MyButton :classButton="'btn_plans'" @click="handToggPlan(currenIndex = index, index)">
+                            See Plans</MyButton>
                     </div>
                 </div>
             </div>
         </div>
         <div class="hid-plan itemlist">
-            <!-- :class="[currenIndex && currenIndex == index ? 'transition-all duration-1000 overflow-hidden h-[200px]' : 'hidden']" -->
             <div class="pt-2 lg:ml-[100px]">
                 <div class="flex py-4 border-t md:flex-row flex-col" v-for="itemPlan in item.plan">
                     <div class="w-[175px] hidden lg:block">
@@ -125,9 +124,9 @@
                                     <p class="text-[12px] text-[#F5455A]">2 Adults / 1 night</p>
                                 </div>
                                 <div>
-                                    <button class="btn_pink">Sign
+                                    <MyButton :classButton="'btn_pink'">Sign
                                         in /
-                                        up</button>
+                                        up</MyButton>
                                 </div>
                             </div>
                             <div class="py-2 flex justify-between">
@@ -137,7 +136,7 @@
                                     <p class="text-[12px] ">2 Adults / 1 night</p>
                                 </div>
                                 <div>
-                                    <button class="btn_book">Book</button>
+                                    <MyButton :classButton="'btn_book'">Book</MyButton>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +149,8 @@
 
 <script setup>
 import { defineProps, ref } from 'vue'
-const { item, index } = defineProps(['item', 'index'])
+const { item, index } = defineProps(['item', 'index']);
+import MyButton from "@/components/Button/index.vue";
 
 const currenIndex = ref(null);
 const responsiveOptions = ref([

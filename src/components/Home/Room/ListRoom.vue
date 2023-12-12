@@ -62,12 +62,11 @@
                     <Itemlist :item="item" :index="index" class="transition-all" />
                 </div>
             </div>
-            <div class="flex justify-center lg:mt-16">
-                <button
-                    class="py-3 lg:py-3.5 px-10 border border-[#ccc] text-center w-full max-w-[360px] font-bold text-sm lg:text-base"
+            <div class="flex justify-center lg:mt-16">MyButton
+                <MyButton class="py-3 lg:py-3.5 px-10 border-[#ccc] w-full max-w-[360px] text-sm lg:text-base"
                     @click="loadMore++" v-if="loadMore <= 2">
                     + Load More
-                </button>
+                </MyButton>
             </div>
         </div>
     </div>
@@ -80,6 +79,7 @@ import { useQuery } from "@tanstack/vue-query";
 import { fetchProduct } from "@/api/Product.js";
 import Itemlist from "@/components/Home/Room/ListItem/item.vue";
 import { root } from "postcss";
+import MyButton from "@/components/Button/index.vue";
 
 const selectedCity = ref();
 const cities = ref([

@@ -16,10 +16,11 @@
                             <p class="text-sm font-serif text-[#000000]">per room / 1 night(s)</p>
                         </div>
                         <div class="flex justify-center items-center">
-                            <button
-                                class="bg-[#1A489C] transition-all hover:bg-white hover:text-[#1A489C] border text-sm text-neutral-50 font-semibold border-[#1A489C] rounded- py-[10px] lg:w-[195px]">Find
+                            <MyButton
+                                :classButton="'bg-[#1A489C] hover:bg-white hover:text-[#1A489C] text-sm text-neutral-50 border-[#1A489C] lg:w-[195px]'">
+                                Find
                                 a
-                                Room</button>
+                                Room</MyButton>
                         </div>
                     </div>
                 </div>
@@ -43,6 +44,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css';
+import MyButton from "@/components/Button/index.vue";
 const currentSlide = ref(window.innerWidth <= 700 ? 0 : 1);
 const windowScreen = ref(window.innerWidth);
 
