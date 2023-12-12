@@ -54,8 +54,7 @@
                                 <span class="text-[#1A489C] font-semibold lg:text-base text-[12px]">+ Add Promo</span>
                             </div>
                         </div>
-                        <div
-                            class="flex  justify-between items-center md:w-[20%] gap-[100px] lg:gap-3 pb-3 order-1 lg:order-2 ">
+                        <div class="flex  justify-between items-center gap-[90px] md:gap-0 pb-3 order-1 lg:order-2 ">
                             <div class="flex justify-center items-center gap-2 mr-10">
                                 <span class="pi pi-user text-white mr-1"></span>
                                 <span class="text-[#FFD25D]">Login</span>

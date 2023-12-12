@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="p-3 bg-white shadow-card pb-3 ">
-        <div class="flex gap-3 lg:flex-grow md:flex-col flex-col">
+        <div class="flex gap-3 lg:flex-grow md:flex-row flex-col">
             <div class="lg:w-[250px] lg:h-[150px] lg:cursor-pointer relative">
                 <div class="card flex justify-center">
                     <Galleria v-model:visible="displayBasic" :value="item.images" :responsiveOptions="responsiveOptions"
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <!-- hidden lg:block -->
-            <div class="md:w-[300px] w-full">
+            <div class="md:w-[300px] ">
                 <div>
                     <span class="text-red-400 text-[10px] font-bold">Rates From</span>
                     <div class="px-2 py-1 text-[11px] rounded-[5px] bg-[#e6ee9c] w-fit font-bold my-1">
@@ -94,7 +94,7 @@
         <div class="hid-plan itemlist">
             <!-- :class="[currenIndex && currenIndex == index ? 'transition-all duration-1000 overflow-hidden h-[200px]' : 'hidden']" -->
             <div class="pt-2 lg:ml-[100px]">
-                <div class="flex py-4 border-t" v-for="itemPlan in item.plan">
+                <div class="flex py-4 border-t md:flex-row flex-col" v-for="itemPlan in item.plan">
                     <div class="w-[175px] hidden lg:block">
                         <figure>
                             <img class="w-full h-[120px]" :src="`${itemPlan.images}`" alt="">

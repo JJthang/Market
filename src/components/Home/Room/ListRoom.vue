@@ -13,7 +13,7 @@
                         <label for="" class="text-[#1a489c] font-semibold text-[13px]">Show only validate</label>
                     </div>
                 </div>
-                <div class="flex md:gap-5 gap-2 ">
+                <div class="flex md:gap-5 gap-2 md:justify-normal justify-between">
                     <div class="flex md:gap-3 gap-1">
                         <Dropdown iconPos="left" v-model="selectedCity" :options="cities" :pt="{
                             trigger: {
