@@ -10,7 +10,7 @@
             </div>
         </div>
     </header>
-    <div class="w-full stick z-50 top-0">
+    <div class="w-full stick z-[999] top-0">
         <div class="w-full transition-all">
             <div class="w-full flex flex-col">
                 <div class="w-full flex justify-start items-center">

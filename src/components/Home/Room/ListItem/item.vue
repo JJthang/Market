@@ -91,7 +91,8 @@
                 </div>
             </div>
         </div>
-        <div class="hid-plan itemlist">
+        <!-- hid-plan -->
+        <div class=" itemlist transition-all duration-500 overflow-hidden" :class="[show ? 'h-[400px]' : 'h-[0px]']">
             <div class="pt-2 lg:ml-[100px]">
                 <div class="flex py-4 border-t md:flex-row flex-col" v-for="itemPlan in item.plan">
                     <div class="w-[175px] hidden lg:block">
@@ -151,6 +152,7 @@
 import { defineProps, ref } from 'vue'
 const { item, index } = defineProps(['item', 'index']);
 import MyButton from "@/components/Button/index.vue";
+const show = ref(false);
 
 const currenIndex = ref(null);
 const responsiveOptions = ref([
@@ -177,9 +179,10 @@ const percentage = (partialValue, totalValue) => {
     return Math.floor(totalValue - (totalValue * partialValue / 100)).toLocaleString('en-US').replace(',', '.');
 }
 const handToggPlan = (curr, index) => {
-    const itemList = document.querySelectorAll(".itemlist");
-    itemList[curr].classList.toggle("togg-plan");
-    itemList[curr].classList.toggle("hid-plan");
+    // const itemList = document.querySelectorAll(".itemlist");
+    // itemList[curr].classList.toggle("togg-plan");
+    // itemList[curr].classList.toggle("hid-plan");
+    show.value = !show.value
 }
 
 </script>
