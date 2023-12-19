@@ -3,7 +3,7 @@
         <div class="w-full py-5">
             <div class="w-full fjc">
                 <div class="w-[75%] md:w-[90%] lg:w-[60%] flex justify-between items-center">
-                    <div class="flex flex-col gap-3">
+                    <div class="flex flex-col">
                         <h3 class="text-lg lg:text-2xl text-center lg:text-left font-bold mb-2">Hotel Epinard Nasu</h3>
                         <div class="flex items-center gap-2">
                             <span class="pi pi-map-marker text-[#5E5E66] text-xs"></span>
@@ -15,7 +15,7 @@
                     <div class="flex gap-7">
                         <div class="flex flex-col">
                             <h3 class="text-3xl font-bold">¥22.000</h3>
-                            <p class="text-sm font-serif text-[#000000]">per room / 1 night(s)</p>
+                            <p class="text-sm font-serif text-[#000000af]">per room / 1 night(s)</p>
                         </div>
                         <div class="flex justify-center items-center ">
                             <MyButton

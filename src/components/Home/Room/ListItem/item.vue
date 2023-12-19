@@ -1,30 +1,20 @@
 <template>
     <div class="my-3">
         <div class="mb-2 hidden lg:block">
-            <p class="text-md font-bold mb-1">【Annex Tower】 Kizuna-family room／ Japanese and Western Style
-                Room/
-                Non-Smoking /34㎡</p>
+            <p class="text-md font-bold mb-1">{{ item.room_type_name }}</p>
         </div>
         <div class="mb-2 hidden lg:block">
-            <span class="text-md font-bold mb-1 text-[#000000]">【</span>
-            <span class="text-base text-[#000000] font-sans">Japanese Western Style Room/ 34㎡/ Annex Tower
-                4～14/F (Except
-                6･7･12/F)/
-                Non-Smoking】With 2
-                regular beds and 2 futons (Japanese traditional bedding). No bathtubs, shower booth only. We
-                set
-                up a spacious tatami space so the bonds (Kizuna) can be deepened between the guests and have
-                a
-                cozy time barefoot.</span>
+            <span class="text-md font-bold mb-1 text-[#000000]"></span>
+            <span class="text-base text-[#000000] font-sans">{{ item.room_type_description }}</span>
         </div>
     </div>
     <div class="p-3 bg-white shadow-card pb-3 ">
         <div class="flex gap-3 lg:flex-grow md:flex-row flex-col">
             <div class="lg:w-[250px] lg:h-[150px] lg:cursor-pointer relative">
                 <div class="card flex justify-center">
-                    <Galleria v-model:visible="displayBasic" :value="item.images" :responsiveOptions="responsiveOptions"
-                        :numVisible="3" containerStyle="max-width: 850px" :circular="true" :fullScreen="true"
-                        :showItemNavigators="true" :showThumbnails="false">
+                    <Galleria v-model:visible="displayBasic" :value="converObejct(item.room_pictures)"
+                        :responsiveOptions="responsiveOptions" :numVisible="3" containerStyle="max-width: 850px"
+                        :circular="true" :fullScreen="true" :showItemNavigators="true" :showThumbnails="false">
                         <template #item="slotProps">
                             <img :src="slotProps.item" class="sharper" :alt="slotProps.item.alt"
                                 style="width: 100%; display: block" />
@@ -34,14 +24,15 @@
                         </template>
                     </Galleria>
                     <figure class="w-full h-full relative" alt="" @click="displayBasic = true">
-                        <img class="w-full h-full" :src="`${item.images[index]}`" alt="">
+                        <img class="w-full h-full" :src="`${converObejct(item.room_pictures)[index]}`" alt="">
                         <div class="flex absolute top-0 py-2 px-2 fjc gap-2 bg-[#FFD25D]">
                             <i class="fa-solid fa-medal text-xs"></i>
                             <span class="text-[#000000] text-[10px] font-sans font-bold">Earn 231 Points</span>
                         </div>
                         <div class="flex absolute bottom-0 right-0 py-2 px-2 fjc gap-2 bg-[#232E48]">
                             <i class="pi pi-camera text-xs text-white"></i>
-                            <span class="text-white text-[10px] font-sans font-bold">1 / {{ item.images.length }}</span>
+                            <span class="text-white text-[10px] font-sans font-bold">1 / {{
+                                converObejct(item.room_pictures).length }}</span>
                         </div>
                     </figure>
                 </div>
@@ -55,7 +46,7 @@
                             <i class="text-sm text-[#424d52d2] mr-2 px-1" :class="itemConven.icon"></i>
                         </div>
                         <div>
-                            <span class="text-xs text-[#424d52d2]">{{ itemConven.value }}</span>
+                            <span class="text-xs text-[#424d52d2]">{{ Object.values(itemConven)[0] }}</span>
                         </div>
                     </div>
                 </div>
@@ -65,12 +56,12 @@
                 <div>
                     <span class="text-red-400 text-[10px] font-bold">Rates From</span>
                     <div class="px-2 py-1 text-[11px] rounded-[5px] bg-[#e6ee9c] w-fit font-bold my-1">
-                        [5％OFF]
+                        [{{ item.room_count }} 5％OFF]
                         Friendship Rate </div>
                     <div class="flex justify-between items-center py-2 border-b border-[#DDDEE0]">
                         <div>
-                            <p class="text-xl text-[#F5455A] font-bold">¥{{ percentage(item.sale,
-                                item.price) }}</p>
+                            <p class="text-xl text-[#F5455A] font-bold">¥{{ percentage(item.room_count,
+                                item.min_price) }}</p>
                             <p class="text-[12px] text-[#F5455A]">2 Adults / 1 night</p>
                         </div>
                         <div>
@@ -82,7 +73,7 @@
                     <div class="py-2">
                         <div>
                             <p class="text-xl font-bold">¥{{
-                                Math.floor(item.price).toLocaleString('en-US').replace(',', '.') }}</p>
+                                Math.floor(item.min_price).toLocaleString('en-US').replace(',', '.') }}</p>
                             <p class="text-[12px]">2 Adults / 1 night</p>
                         </div>
                         <MyButton :classButton="'btn_plans'" @click="handToggPlan(currenIndex = index, index)">
@@ -92,16 +83,16 @@
             </div>
         </div>
         <!-- hid-plan -->
-        <div class=" itemlist transition-all duration-500 overflow-hidden" :class="[show ? 'h-[400px]' : 'h-[0px]']">
+        <div class=" itemlist transition-all duration-500 overflow-hidden" :class="[show ? 'h-[450px]' : 'h-[0px]']">
             <div class="pt-2 lg:ml-[100px]">
-                <div class="flex py-4 border-t md:flex-row flex-col" v-for="itemPlan in item.plan">
+                <div class="flex py-4 border-t md:flex-row flex-col" v-for="itemPlan in item.room_plan">
                     <div class="w-[175px] hidden lg:block">
                         <figure>
-                            <img class="w-full h-[120px]" :src="`${itemPlan.images}`" alt="">
+                            <img class="w-full h-[120px]" :src="`${randomImgRoomPlan(itemPlan.url_plan_pictures)}`" alt="">
                         </figure>
                     </div>
                     <div class="flex-1 lg:pl-4 lg:pr-12">
-                        <h4 class="text-[#1a489c] font-bold text-[15px] font-sans">{{ itemPlan.title }}</h4>
+                        <h4 class="text-[#1a489c] font-bold text-[15px] font-sans">{{ itemPlan.room_plan_name }}</h4>
                         <div class="mt-2 flex gap-2 items-center">
                             <i
                                 class="fa-solid fa-info text-[#c0900cf7] text-[8px] border border-[#c0900cf7] px-[7px] py-1 rounded-full"></i>
@@ -109,18 +100,17 @@
                                 Policy</span>
                         </div>
                     </div>
-
                     <div class="lg:w-[300px]">
                         <div>
                             <span class="text-red-400 text-[10px] font-bold">Rates From</span>
                             <div class="px-2 py-1 text-[11px] rounded-[5px] bg-[#e6ee9c] w-fit font-bold my-1">
-                                [{{ itemPlan.sale }}％OFF]
+                                [{{ item.room_count }}％OFF]
                                 Friendship Rate </div>
                             <div class="flex justify-between items-center py-2 border-b border-[#DDDEE0]">
                                 <div>
                                     <p class="text-xl text-[#F5455A] font-bold">¥ {{
-                                        percentage(itemPlan.sale,
-                                            itemPlan.price) }}
+                                        percentage(item.room_count,
+                                            itemPlan.min_price) }}
                                     </p>
                                     <p class="text-[12px] text-[#F5455A]">2 Adults / 1 night</p>
                                 </div>
@@ -133,7 +123,9 @@
                             <div class="py-2 flex justify-between">
                                 <div>
                                     <p class="text-xl font-bold">¥{{
-                                        itemPlan.price.toLocaleString('en-US').replace(',', '.') }}</p>
+                                        item.min_price.toLocaleString('en-US').replace(',', '.')
+                                    }}
+                                    </p>
                                     <p class="text-[12px] ">2 Adults / 1 night</p>
                                 </div>
                                 <div>
@@ -153,6 +145,8 @@ import { defineProps, ref } from 'vue'
 const { item, index } = defineProps(['item', 'index']);
 import MyButton from "@/components/Button/index.vue";
 const show = ref(false);
+
+console.log(item.room_pictures[0].picture.url);
 
 const currenIndex = ref(null);
 const responsiveOptions = ref([
@@ -179,10 +173,21 @@ const percentage = (partialValue, totalValue) => {
     return Math.floor(totalValue - (totalValue * partialValue / 100)).toLocaleString('en-US').replace(',', '.');
 }
 const handToggPlan = (curr, index) => {
-    // const itemList = document.querySelectorAll(".itemlist");
-    // itemList[curr].classList.toggle("togg-plan");
-    // itemList[curr].classList.toggle("hid-plan");
     show.value = !show.value
+}
+const converObejct = (params) => {
+    const convertObj = params.map(item => {
+        // const fistUrl = item.url;
+        // item.picture = Object.values(item.picture)
+        // const slidePicture = item.picture.map(item => item.url).slice(1, item.picture.length);
+        // return [fistUrl, ...slidePicture]
+        return item.picture.url
+    });
+    return convertObj;
+}
+
+const randomImgRoomPlan = (item) => {
+    return item[Math.floor(Math.random() * item.length) + 1]
 }
 
 </script>
