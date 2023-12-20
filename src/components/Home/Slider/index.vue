@@ -7,7 +7,8 @@
                         <h3 class="text-lg lg:text-2xl text-center lg:text-left font-bold mb-2">Hotel Epinard Nasu</h3>
                         <div class="flex items-center gap-2">
                             <span class="pi pi-map-marker text-[#5E5E66] text-xs"></span>
-                            <span class="text-[#5E5E66] text-primary-thin text-base">1 Ōaza TakakuheiNasu, Nasu-gun,
+                            <span class="text-[#5E5E66] text-primary-thin text-15">1 Ōaza TakakuheiNasu,
+                                Nasu-gun,
                                 Tochigi</span>
                             <!-- font-sans -->
                         </div>
@@ -37,7 +38,7 @@
                 @click.native="$refs.vueperslides2.goToSlide(i)" class="gap-5 relative">
             </vueper-slide>
         </vueper-slides>
-        <div class="absolute flex items-center px-2 py-2 bg-[#232E48] resp z-[99]">
+        <div class="absolute flex items-center px-3 py-2 bg-[#232E48] rounded-sm resp z-[99]">
             <i class="fa-solid fa-camera px-2 text-white"></i>
             <h1 class="text-lg text-white px-2">{{ currentSlide }} / {{ images.length }}</h1>
         </div>

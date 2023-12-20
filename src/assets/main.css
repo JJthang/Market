@@ -6,8 +6,28 @@
 
 @layer base{
   span {
-     @apply text-[#6B7280] font-mono
+     @apply text-[#6B7280] font-glo
   }
+  p {
+    @apply  font-glo
+  }
+  li{
+    @apply  font-glo
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .content-text{
+    font-size: 14px;
+    line-height: 29px;
+  }
+}
+
+
+@layer base{
+  /* html {
+    @apply font-serif;
+  } */
 }
 
 @layer components{
@@ -19,6 +39,7 @@
 @layer tailwind-base {
   @tailwind base;
 }
+
 
 @layer tailwind-utilities {
   @tailwind components;

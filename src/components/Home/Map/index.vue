@@ -20,29 +20,29 @@
                     </div>
                 </div>
             </div>
-            <div class="py-2 ">
-                <p class="text-[#000000] font-bold py-3">Access from nearby stations</p>
+            <div class="py-2 content-text">
+                <p class="text-[#000000] font-bold py-3 heading">Access from nearby stations</p>
                 <ul class="py-2 flex flex-col gap-2">
-                    <li class="font-sans">About 10 minutes by car from Tohoku Expressway Nasu I.C.</li>
-                    <li class="font-sans">About 30 minutes by taxi from the Tohoku Shinkansen nasushiobara station</li>
-                    <li class="font-sans">About 20 minutes by taxi from the Tohoku Line kuroiso station.</li>
-                    <li class="font-sans">30 minutes by shuttle bus from the Tohoku Shinkansen nasushiobara station.
+                    <li class="">About 10 minutes by car from Tohoku Expressway Nasu I.C.</li>
+                    <li class="">About 30 minutes by taxi from the Tohoku Shinkansen nasushiobara station</li>
+                    <li class="">About 20 minutes by taxi from the Tohoku Line kuroiso station.</li>
+                    <li class="">30 minutes by shuttle bus from the Tohoku Shinkansen nasushiobara station.
                         (Reservation required)
                     </li>
                 </ul>
-                <p class="text-[#000000] font-bold py-3">Access from major transit terminals</p>
-                <p class="font-sans">3 hours and 20 minutes by Highway Bus from Shinjuku Station.</p>
-                <p class="text-[#000000] font-bold py-3">Parking Facility Information</p>
+                <p class="text-[#000000] font-bold py-3 heading">Access from major transit terminals</p>
+                <p class="">3 hours and 20 minutes by Highway Bus from Shinjuku Station.</p>
+                <p class="text-[#000000] font-bold py-3 heading">Parking Facility Information</p>
 
                 <ul class="py-2 flex flex-col gap-2">
-                    <li class="font-sans">We have a parking lot (first come, first served).</li>
-                    <li class="font-sans">Fee:free</li>
-                    <li class="font-sans">About 20 minutes by taxi from the Tohoku Line kuroiso station.</li>
-                    <li class="font-sans">Garage-type: Flat (320 vehicles); Multilevel (0 vehicles)</li>
+                    <li class="">We have a parking lot (first come, first served).</li>
+                    <li class="">Fee:free</li>
+                    <li class="">About 20 minutes by taxi from the Tohoku Line kuroiso station.</li>
+                    <li class="">Garage-type: Flat (320 vehicles); Multilevel (0 vehicles)</li>
                 </ul>
                 <ul class="py-2 flex flex-col gap-2">
-                    <li class="font-sans">* Notes:</li>
-                    <li class="font-sans">The fee, the vehicle capacity, etc. may change without prior notice. Your
+                    <li class="">* Notes:</li>
+                    <li class="">The fee, the vehicle capacity, etc. may change without prior notice. Your
                         understanding in this matter is appreciated.</li>
                 </ul>
             </div>
@@ -55,4 +55,8 @@ import MyButton from "@/components/Button/index.vue";
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.heading {
+    font-size: 15px;
+}
+</style>

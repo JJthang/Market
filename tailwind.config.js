@@ -8,30 +8,19 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: [
+        glo: [
           "Lato",
           "Meiryo",
-          '"Hiragino Mincho Pro"',
-          '"Hiragino Kaku Gothic Pro"',
+          "Hiragino Mincho Pro",
+          "Hiragino Kaku Gothic Pro",
           "Tahoma",
           "Osaka",
           "sans-serif",
-          // "Crimson Text",
-          // "serif",
-          // "Noto Serif",
-          // "serif",
-          // "Poppins",
-          // "sans-serif",
-          // "Roboto",
-          // "sans-serif",
         ],
       },
     },
     fontSize: {
-      sm: "0.875rem",
-      "2xl": "1.75rem",
-      xl: "30px",
-      base: "0.8rem",
+      15: "15px",
     },
   },
   plugins: [],

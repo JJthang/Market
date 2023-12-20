@@ -5,7 +5,7 @@
         </div>
         <div class="mb-2 hidden lg:block">
             <span class="text-md font-bold mb-1 text-[#000000]"></span>
-            <span class="text-base text-[#000000] font-sans">{{ item.room_type_description }}</span>
+            <span class="text-base text-[#000000]">{{ item.room_type_description }}</span>
         </div>
     </div>
     <div class="p-3 bg-white shadow-card pb-3 ">
@@ -17,7 +17,7 @@
                         :circular="true" :fullScreen="true" :showItemNavigators="true" :showThumbnails="false">
                         <template #item="slotProps">
                             <img :src="slotProps.item" class="sharper" :alt="slotProps.item.alt"
-                                style="width: 100%; display: block" />
+                                style="width: 100%; display: block; height: 500px;" />
                         </template>
                         <template #thumbnail="slotProps">
                             <img :src="slotProps.item" :alt="slotProps.item.alt" style="display: block" />

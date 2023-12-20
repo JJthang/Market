@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full fjc mt-2 border-b border-[#dddee0] bg-[#FFFFFF] sticky lg:top-[158px] z-10">
+    <div class="w-full fjc mt-2 border-b border-[#dddee0] bg-[#FFFFFF] sticky lg:top-[167px] z-10">
         <ul class="w-[95%] lg:w-[60%] flex" @click="handTakeElement">
             <li v-for="(item, index) in tabs" @click="currentTab = index" id="hotel-tab"
                 class="w-full cursor-pointer py-3 text-center"
