@@ -9,7 +9,7 @@
                         ? checkSubString(text, text.length)
                         : checkSubString(text)
                     }}
-                    <span class="text-secondary text-[#1a489c] ml-2.5 font-bold text-13 lg:text-15 lg:cursor-pointer"
+                    <span class="text-secondary text-[#1a489c] ml-2.5 font-bold text-13 lg:text-[15px] lg:cursor-pointer"
                         @click="readMore">
                         {{ lengthString ? "Read less" : "Read more" }}</span>
                     <div class="flex items-center mt-3">

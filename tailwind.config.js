@@ -19,9 +19,9 @@ export default {
         ],
       },
     },
-    fontSize: {
-      15: "15px",
-    },
+    // fontSize: {
+    //   15: "15px",
+    // },
   },
   plugins: [],
 };
