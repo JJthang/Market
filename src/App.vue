@@ -11,7 +11,7 @@
 
 
 <script setup>
-import { ref, provide } from "vue"
+import { ref, provide, onUpdated } from "vue"
 import { RouterView } from 'vue-router'
 import Header from '@/components/Global/Header/index.vue'
 import Footer from '@/components/Global/Footer/index.vue'
@@ -20,6 +20,11 @@ provide("model", model);
 const handcloseModel = () => {
   model.value = false;
 }
+onUpdated(() => {
+  if (model.value) {
+    window.addEventListener("scroll", () => window.scrollTo(0, 0))
+  }
+})
 
 </script>
 

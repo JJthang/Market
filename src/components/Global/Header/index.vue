@@ -32,25 +32,27 @@
                         </div>
                         <div class="flex justify-between items-center md:w-[55%] gap-3 order-2 pb-4 lg:pb-0 lg:order-1">
                             <div
-                                class="flex justify-start items-center gap-2 bg-[#FFFFFF] px-2 md:px-6 py-[10px] lg:px-3 rounded-sm cursor-pointer">
-                                <div class="fjc">
+                                class="flex justify-start items-center gap-2 bg-[#FFFFFF] py-[10px] rounded-sm cursor-pointer">
+                                <div class="fjc md:px-4 lg:pr-7 px-2">
                                     <span class="pi pi-calendar text-[#1A489C] font-semibold pr-2 lg:block hidden"></span>
                                     <span class="text-[#1A489C] font-semibold lg:text-sm text-xs">Dec 10 - Dec 11
                                     </span>
                                 </div>
                             </div>
                             <div
-                                class="flex justify-start items-center gap-2 bg-[#FFFFFF] px-2 md:px-6 lg:px-3 py-[10px] rounded-sm cursor-pointer">
-                                <div class="fjc" @click="handopendModel">
+                                class="flex justify-end items-center gap-2  bg-[#FFFFFF] py-[10px] rounded-sm cursor-pointer">
+                                <div class="fjc md:px-4 lg:pr-7 px-2" @click="handopendModel">
                                     <span
                                         class="fa-solid fa-user-group text-[#1A489C] font-semibold pr-2 lg:block hidden"></span>
-                                    <span class="text-[#1A489C] font-semibold lg:text-sm text-xs">1 Room, 2 Guests
+                                    <span class="text-[#1A489C] font-semibold lg:text-sm text-xs">
+                                        {{ rentRoom.rentRoom.length }} Room , {{ handReduce(rentRoom.rentRoom) }} Guests
                                     </span>
                                 </div>
                                 <div class="relative">
-                                    <div class="fixed top-0 left-0 bottom-0 w-full lg:absolute lg:top-[3.1rem] lg:left-[-16rem] bg-white lg:w-[360px] z-10"
-                                        v-if="model == true">
-                                        <div class="lg:w-[360px] bg-white wg-in px-6 py-4 overflow-y-auto">
+                                    <div class="fixed top-0 left-0 bottom-0 w-full lg:absolute lg:top-[3.1rem] lg:left-[-16rem] bg-white"
+                                        v-if="modeHeader.list">
+                                        <div
+                                            class="lg:w-[360px] bg-white wg-in px-6 py-4 overflow-y-auto h-[250px] border-b-4 border-yellow-400">
                                             <div class="flex justify-end items-center pb-1">
                                                 <i class="pi pi-times" @click="handCloseModel"></i>
                                             </div>
@@ -61,64 +63,19 @@
                                                             ? 'h-[160px]'
                                                             : 'h-[50px]',
                                                     ]" v-for="(item, index) in rentRoom.rentRoom" :key="index">
-                                                    <div class="flex border-b border-b-[#DDDEE0] py-1"
-                                                        @click="handChangeTogg(index)">
-                                                        <div class="py-2 flex-1">
-                                                            <span class="font-semibold text-[13px] text-black">Room 1</span>
-                                                        </div>
-                                                        <div class="flex justify-end items-center">
-                                                            <div class="mr-3 py-2">
-                                                                <span
-                                                                    class="text-secondary text-[11px] text-[#1A489C] font-semibold">10
-                                                                    Adults , 10 Children</span>
-                                                            </div>
-                                                            <span class="pi pi-trash"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="pt-3">
-                                                        <div class="flex items-center">
-                                                            <div class="flex-1">
-                                                                <span class="text-[13px] text-black">Adults</span>
-                                                            </div>
-                                                            <div class="flex">
-                                                                <button
-                                                                    class="rounded-l-[4px] bg-[#1A489C] px-[9px] py-[6px]"
-                                                                    @click="handReduce(Object.keys(item), index)">
-                                                                    <span class="pi pi-minus text-white"></span>
-                                                                </button>
-                                                                <div class="px-4 py-[7px] border-y-2">
-                                                                    {{ rentRoom.Adults }}
-                                                                </div>
-                                                                <button
-                                                                    class="rounded-r-[4px] bg-[#1A489C] px-[9px] py-[6px]"
-                                                                    @click="
-                                                                        handIncrease(Object.keys(item), index)
-                                                                        ">
-                                                                    <span class="pi pi-plus text-white"></span>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                        <div class="flex items-center pt-3">
-                                                            <div class="flex-1">
-                                                                <span class="text-[13px] text-black">Adults</span>
-                                                            </div>
-                                                            <div class="flex">
-                                                                <button
-                                                                    class="rounded-l-[4px] bg-[#1A489C] px-[9px] py-[6px]"
-                                                                    @click="handReduce(Object.keys(item), index)">
-                                                                    <span class="pi pi-minus text-white"></span>
-                                                                </button>
-                                                                <div class="px-4 py-[7px] border-y-2">
-                                                                    {{ rentRoom.Childrens }}
-                                                                </div>
-                                                                <button
-                                                                    class="rounded-r-[4px] bg-[#1A489C] px-[9px] py-[6px]"
-                                                                    @click="handIncrease(Object.keys(item), index)">
-                                                                    <span class="pi pi-plus text-white"></span>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <ListRental :item="item" :index="index" :rentRoom="rentRoom"
+                                                        :toggRoom="toggRoom" @indexItem="handDeleteItem" />
+                                                </div>
+                                                <div class="flex justify-between items-center gap-2 mt-2">
+                                                    <button
+                                                        class="py-[9px] border px-4 font-semibold rounded-[5px] hover:text-white hover:bg-[#1A489C] transition-all duration-200 text-[#1a489c]"
+                                                        @click="handAddRoom">+
+                                                        Add
+                                                        A
+                                                        Room</button>
+                                                    <button
+                                                        class="py-[9px] border px-11 font-medium rounded-[5px] bg-[#FFD25D] transition-all duration-200 hover:bg-[#232E48] hover:text-[#FFD25D]"
+                                                        @click="handCloseModel">Apply</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -126,8 +83,8 @@
                                 </div>
                             </div>
                             <div
-                                class="flex justify-start items-center gap-2 bg-[#FFFFFF] px-3 md:px-7 lg:px-3 py-[10px] rounded-sm cursor-pointer">
-                                <div class="fjc">
+                                class="flex justify-start items-center gap-2 bg-[#FFFFFF] py-[10px] rounded-sm cursor-pointer">
+                                <div class="fjc md:px-4 lg:pr-7 px-2">
                                     <span class="fa-solid fa-tag text-[#1A489C] font-semibold lg:block hidden"></span>
                                     <span class="text-[#1A489C] font-semibold lg:text-sm text-xs px-2">+ Add Promo</span>
                                 </div>
@@ -154,47 +111,66 @@
 </template>
 
 <script setup>
-import { ref, inject, reactive } from "vue";
-const blocked = ref(false);
+import {
+    ref,
+    inject,
+    reactive,
+    watch,
+    onMounted
+} from "vue";
+import ListRental from '@/components/Global/Header/Rental-list/index.vue'
+// import DatePick from '@/components/Global/Header/Date/index.vue'
 const model = inject("model");
-const toggRoom = ref({
+const modeHeader = reactive({
+    list: false,
+    dateModel: false
+})
+const toggRoom = reactive({
     num: null,
     condis: false,
 });
 const rentRoom = reactive({
     Adults: 0,
     Childrens: 0,
-    rentRoom: [
-        {
-            Adults: 0,
-            Childrens: 0,
-        },
-        {
-            Adults: 0,
-            Childrens: 0,
-        },
-    ],
+    rentRoom: [{
+        Adults: 0,
+        Childrens: 0,
+    }],
 });
-const handIncrease = (roomKey, index) => {
-    roomKey[index].includes("Adults") ? rentRoom.Adults++ : rentRoom.Childrens++;
-};
-const handReduce = (roomKey, index) => {
-    roomKey[index].includes("Adults") ? rentRoom.Adults-- : rentRoom.Childrens--;
-};
 const handopendModel = () => {
     model.value = true;
+    modeHeader.list = true;
 };
 const handCloseModel = () => {
     model.value = false;
+    modeHeader.list = false;
 };
-console.log("Model Value in Header:", model.value);
-const handChangeTogg = (index) => {
-    if (toggRoom.value.num != index) {
-        toggRoom.value.condis = false;
+const handAddRoom = () => {
+    rentRoom.rentRoom.push({
+        Adults: rentRoom.Adults,
+        Childrens: rentRoom.Childrens,
+    })
+}
+const handDeleteItem = (index) => {
+    rentRoom.rentRoom = rentRoom.rentRoom.filter((_, indexRoom) => indexRoom != index);
+}
+watch(model, (newData, oldData) => {
+    if (newData == false) {
+        modeHeader.list = false
     }
-    toggRoom.value.num = index;
-    toggRoom.value.condis = !toggRoom.value.condis;
-};
+})
+watch(() => [rentRoom.Adults, rentRoom.Childrens], (newVal, _) => {
+    rentRoom.rentRoom = rentRoom.rentRoom.map(_ => ({
+        Adults: newVal[0],
+        Childrens: newVal[1]
+    }))
+}, { deep: true })
+onMounted(() => {
+    console.log(rentRoom.rentRoom.length);
+})
+const handReduce = (data) => {
+    return data.reduce((total, curr) => total += (curr.Adults + curr.Childrens), 0)
+}
 </script>
 
 <style lang="scss" scoped>

@@ -5,6 +5,8 @@ import "primevue/resources/primevue.min.css"; /* Deprecated */
 import "primeicons/primeicons.css";
 import "vueperslides/dist/vueperslides.css";
 import { register } from "swiper/element/bundle";
+import VueDatePicker from "@vuepic/vue-datepicker";
+import "@vuepic/vue-datepicker/dist/main.css";
 
 import { createApp } from "vue";
 import { createPinia } from "pinia";
@@ -217,5 +219,6 @@ app.component("TreeTable", TreeTable);
 app.component("TriStateCheckbox", TriStateCheckbox);
 app.component("VirtualScroller", VirtualScroller);
 register();
+app.component("VueDatePicker", VueDatePicker);
 
 app.mount("#app");

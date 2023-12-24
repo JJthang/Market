@@ -10,6 +10,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@tanstack/vue-query": "^5.10.0",
+    "@vuepic/vue-datepicker": "^7.4.0",
     "axios": "^1.6.2",
     "oh-vue-icons": "^1.0.0-rc3",
     "pinia": "^2.1.7",
