@@ -58,7 +58,6 @@ onMounted(() => {
     window.addEventListener('resize', value => {
         windowScreen.value = window.innerWidth
     });
-    console.log(windowScreen.value);
 });
 onUnmounted(() => {
     window.removeEventListener('resize', () => { windowScreen.value = window.innerWidth })

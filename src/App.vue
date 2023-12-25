@@ -37,6 +37,11 @@ onUpdated(() => {
 
 
 <style lang="scss">
+* {
+  // --dp-hover-color: #1a4699;
+  // --dp-range-between-dates-background-color: var(#1a4699);
+}
+
 .dp__clear_icon {
   visibility: hidden !important;
 }
@@ -47,6 +52,47 @@ onUpdated(() => {
 
 .dp__action_row {
   width: 550px !important;
+}
+
+.dp__range_between {
+  background-color: #1A4699;
+}
+
+.dp__inner_nav {
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  width: 40px;
+  height: 30px;
+}
+
+.dp__action_buttons {
+  gap: 15px;
+}
+
+.dp__action_cancel {
+  padding: 0px 20px;
+  height: 40px;
+}
+
+.dp__action_select {
+  padding: 0px 20px;
+  height: 40px;
+}
+
+.dp__today {
+  border: none;
+}
+
+.dp__range_between {
+  color: white;
+}
+
+.dp__range_start {
+  background-color: #1A4699;
+}
+
+.dp__range_end {
+  background-color: #1A4699;
 }
 
 .dp__arrow_top {

@@ -60,9 +60,7 @@
 import { defineProps, defineEmits } from 'vue'
 
 const { item, toggRoom, rentRoom, index } = defineProps(["item", "toggRoom", "rentRoom", "index"]);
-
 const emit = defineEmits(["indexItem"]);
-console.log(rentRoom);
 const handIncrease = (roomKey, name, index) => {
     if (index >= 1) {
         return;
@@ -93,9 +91,6 @@ const handChangeTogg = (index) => {
 const handDeleteRoom = (index) => {
     emit("indexItem", index)
 }
-
-
-
 </script>
 
 <style lang="scss">

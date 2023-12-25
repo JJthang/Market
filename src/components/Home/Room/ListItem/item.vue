@@ -146,8 +146,6 @@ const { item, index } = defineProps(['item', 'index']);
 import MyButton from "@/components/Button/index.vue";
 const show = ref(false);
 
-console.log(item.room_pictures[0].picture.url);
-
 const currenIndex = ref(null);
 const responsiveOptions = ref([
     {
