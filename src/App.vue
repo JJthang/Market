@@ -20,9 +20,15 @@ provide("model", model);
 const handcloseModel = () => {
   model.value = false;
 }
+const handleScroll = () => {
+  window.scrollTo(0, 0);
+};
+
 onUpdated(() => {
   if (model.value) {
-    window.addEventListener("scroll", () => window.scrollTo(0, 0))
+    window.addEventListener("scroll", handleScroll)
+  } else {
+    window.removeEventListener("scroll", handleScroll)
   }
 })
 
@@ -31,12 +37,34 @@ onUpdated(() => {
 
 
 <style lang="scss">
+.dp__clear_icon {
+  visibility: hidden !important;
+}
+
+* {
+  --dp-menu-width: 700px !important;
+}
+
+.dp__action_row {
+  width: 550px !important;
+}
+
+.dp__arrow_top {
+  width: 0px;
+  height: 0px;
+}
+
 .line-h {
   line-height: 27px !important;
 }
 
 .mh-checkbox input[type=checkbox]:checked+label[data-v-f0305e6e]:before {
   background: #232e48 !important;
+}
+
+.dp--menu-wrapper {
+  top: 60px !important;
+  left: -130px !important;
 }
 
 .bg-primary-model {

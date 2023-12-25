@@ -30,18 +30,29 @@
                                     alt="" />
                             </a>
                         </div>
-                        <div class="flex justify-between items-center md:w-[55%] gap-3 order-2 pb-4 lg:pb-0 lg:order-1">
+                        <div
+                            class="flex justify-between items-center md:w-[55%] gap-3 order-2 pb-4 lg:pb-0 lg:order-1 relative">
                             <div
                                 class="flex justify-start items-center gap-2 bg-[#FFFFFF] py-[10px] rounded-sm cursor-pointer">
-                                <div class="fjc md:px-4 lg:pr-7 px-2">
+                                <div class="fjc md:px-4 lg:pr-7 px-2" @click="handopendModelDate">
                                     <span class="pi pi-calendar text-[#1A489C] font-semibold pr-2 lg:block hidden"></span>
-                                    <span class="text-[#1A489C] font-semibold lg:text-sm text-xs">Dec 10 - Dec 11
+                                    <span class="text-[#1A489C] font-semibold lg:text-sm text-xs">{{ handShowdate() }}
                                     </span>
                                 </div>
+                                <div v-if="modeHeader.dateModel"
+                                    class="fixed lg:absolute top-0 left-0 bottom-0 lg:top-[0.1rem] lg:left-[-1rem]">
+                                    <div class="lg:w-[200px] wg-in px-6 py-4" @click="handopendModelDate">
+                                        <VueDatePicker v-model="date" input-class="hide-input" multi-calendars range
+                                            :partial-range="false" ref="datepicker">
+                                            <template #dp-input="{ value }">
+                                                <input type="text" :value="value" class="invisible" />
+                                            </template>
+                                        </VueDatePicker>
+                                    </div>
+                                </div>
                             </div>
-                            <div
-                                class="flex justify-end items-center gap-2  bg-[#FFFFFF] py-[10px] rounded-sm cursor-pointer">
-                                <div class="fjc md:px-4 lg:pr-7 px-2" @click="handopendModel">
+                            <div class="flex justify-end items-center gap-2  bg-[#FFFFFF] rounded-sm cursor-pointer">
+                                <div class="fjc md:px-4 lg:pr-7 px-2 py-[10px]" @click="handopendModelList">
                                     <span
                                         class="fa-solid fa-user-group text-[#1A489C] font-semibold pr-2 lg:block hidden"></span>
                                     <span class="text-[#1A489C] font-semibold lg:text-sm text-xs">
@@ -54,7 +65,7 @@
                                         <div
                                             class="lg:w-[360px] bg-white wg-in px-6 py-4 overflow-y-auto h-[250px] border-b-4 border-yellow-400">
                                             <div class="flex justify-end items-center pb-1">
-                                                <i class="pi pi-times" @click="handCloseModel"></i>
+                                                <i class="pi pi-times" @click="handCloseModelList"></i>
                                             </div>
                                             <div class="flex flex-col gap-3">
                                                 <div class="flex flex-col overflow-hidden transition-all duration-500"
@@ -75,7 +86,7 @@
                                                         Room</button>
                                                     <button
                                                         class="py-[9px] border px-11 font-medium rounded-[5px] bg-[#FFD25D] transition-all duration-200 hover:bg-[#232E48] hover:text-[#FFD25D]"
-                                                        @click="handCloseModel">Apply</button>
+                                                        @click="handCloseModelList">Apply</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -116,10 +127,16 @@ import {
     inject,
     reactive,
     watch,
-    onMounted
+    nextTick
 } from "vue";
 import ListRental from '@/components/Global/Header/Rental-list/index.vue'
+import { format } from 'date-fns';
 // import DatePick from '@/components/Global/Header/Date/index.vue'
+import { addDays } from 'date-fns';
+const datepicker = ref(null);
+const currentDate = ref([]);
+
+const date = ref([new Date(), addDays(new Date(), 5)]);
 const model = inject("model");
 const modeHeader = reactive({
     list: false,
@@ -137,13 +154,31 @@ const rentRoom = reactive({
         Childrens: 0,
     }],
 });
-const handopendModel = () => {
+const handShowdate = () => {
+    if (currentDate.value.length > 0) {
+        return `${currentDate.value[0]} - ${currentDate.value[1]}`
+    } else {
+        return 'Dec 10 - Dec 11'
+    }
+}
+const handopendModelList = () => {
     model.value = true;
     modeHeader.list = true;
+    modeHeader.dateModel = false;
 };
-const handCloseModel = () => {
+const handCloseModelList = () => {
     model.value = false;
     modeHeader.list = false;
+};
+const handopendModelDate = () => {
+    model.value = true;
+    modeHeader.dateModel = true;
+    modeHeader.list = false;
+    nextTick(() => {
+        if (datepicker.value) {
+            datepicker.value.openMenu();
+        }
+    });
 };
 const handAddRoom = () => {
     rentRoom.rentRoom.push({
@@ -154,9 +189,13 @@ const handAddRoom = () => {
 const handDeleteItem = (index) => {
     rentRoom.rentRoom = rentRoom.rentRoom.filter((_, indexRoom) => indexRoom != index);
 }
-watch(model, (newData, oldData) => {
+const handReduce = (data) => {
+    return data.reduce((total, curr) => total += (curr.Adults + curr.Childrens), 0)
+}
+watch(model, (newData, _) => {
     if (newData == false) {
         modeHeader.list = false
+        modeHeader.dateModel = false
     }
 })
 watch(() => [rentRoom.Adults, rentRoom.Childrens], (newVal, _) => {
@@ -165,12 +204,15 @@ watch(() => [rentRoom.Adults, rentRoom.Childrens], (newVal, _) => {
         Childrens: newVal[1]
     }))
 }, { deep: true })
-onMounted(() => {
-    console.log(rentRoom.rentRoom.length);
+watch(date, (newVlue, _) => {
+    newVlue.forEach(item => {
+        const yourDate = new Date(item);
+        const formatDate = format(yourDate, 'MMM dd');
+        currentDate.value.push(formatDate);
+    })
+    modeHeader.list = true;
 })
-const handReduce = (data) => {
-    return data.reduce((total, curr) => total += (curr.Adults + curr.Childrens), 0)
-}
+
 </script>
 
 <style lang="scss" scoped>
