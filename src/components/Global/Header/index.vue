@@ -40,7 +40,7 @@
                                     class="fixed lg:absolute top-0 left-0 bottom-0 lg:top-[0.1rem] lg:left-[-1rem]">
                                     <div class="lg:w-[200px] wg-in px-6 py-4" @click="handopendModelDate">
                                         <VueDatePicker v-model="date" input-class="hide-input" multi-calendars range
-                                            :partial-range="false" ref="datepicker" @cancel="handleCancel">
+                                            :partial-range="false" ref="datepicker" @closed="handleCancel">
                                             <template #dp-input="{ value }">
                                                 <input type="text" :value="value" class="invisible" />
                                             </template>
@@ -184,10 +184,10 @@ const handDeleteItem = (index) => {
     rentRoom.rentRoom = rentRoom.rentRoom.filter((_, indexRoom) => indexRoom != index);
 }
 const handReduce = (data) => {
-    return data.reduce((total, curr) => total += (curr.Adults + curr.Childrens), 0)
+    return data.reduce((total, curr) => total += (curr.Adults + curr.Childrens), 0);
 }
 const handleCancel = () => {
-    console.log("Đã hủy");
+    modeHeader.list = true;
 }
 // Close when model equal false
 watch(model, (newData, _) => {
