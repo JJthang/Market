@@ -59,7 +59,7 @@
 <script setup>
 import { defineProps, defineEmits } from 'vue'
 
-const { item, toggRoom, rentRoom, index } = defineProps(["item", "toggRoom", "rentRoom", "index"]);
+const { item, toggRoom, rentRoom, index } = defineProps(['item', 'toggRoom', 'rentRoom', 'index']);
 const emit = defineEmits(["indexItem"]);
 const handIncrease = (roomKey, name, index) => {
     if (index >= 1) {

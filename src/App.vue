@@ -4,26 +4,43 @@
     <RouterView />
     <Footer />
   </div>
-  <div class="fixed top-0 left-0 w-full h-full bg-primary-model transition-all duration-1000" v-if="model"
-    @click="handcloseModel">
+  <Transition name="fade">
+    <WellCome v-if="sidebar" @opendSign="handOpendSignIn" />
+  </Transition>
+  <Transition name="fade">
+    <SignIn v-if="signUpBar" />
+  </Transition>
+  <div class="fixed top-0 left-0 w-full h-full bg-primary-model transition-all duration-1000"
+    :class="[sidebar | signUpBar ? 'z-[1000]' : 'z-50']" v-if="model" @click="handcloseModel">
   </div>
 </template>
 
 
 <script setup>
-import { ref, provide, onUpdated } from "vue"
+import { ref, provide, onUpdated, Transition } from "vue"
 import { RouterView } from 'vue-router'
 import Header from '@/components/Global/Header/index.vue'
 import Footer from '@/components/Global/Footer/index.vue'
+import WellCome from "@/components/SideBar/WellCome.vue";
+import SignIn from '@/components/SideBar/Sign/SignIn.vue'
 const model = ref(false);
+const sidebar = ref(false);
+const signUpBar = ref(false);
 provide("model", model);
+provide("sidebar", sidebar);
+provide("signUpBar", signUpBar);
+const handOpendSignIn = () => {
+  sidebar.value = false;
+  signUpBar.value = true;
+}
 const handcloseModel = () => {
   model.value = false;
+  sidebar.value = false;
+  signUpBar.value = false;
 }
 const handleScroll = () => {
   window.scrollTo(0, 0);
 };
-
 onUpdated(() => {
   if (model.value) {
     window.addEventListener("scroll", handleScroll)
@@ -34,12 +51,15 @@ onUpdated(() => {
 
 </script>
 
-
-
 <style lang="scss">
-* {
-  // --dp-hover-color: #1a4699;
-  // --dp-range-between-dates-background-color: var(#1a4699);
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  transform: translateX(500px);
 }
 
 .dp__clear_icon {
@@ -118,6 +138,5 @@ onUpdated(() => {
   background-color: #232e48;
   background-color: rgb(35 46 72/var(--tw-bg-opacity));
   opacity: 0.8;
-  z-index: 50;
 }
 </style>

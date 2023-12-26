@@ -107,7 +107,8 @@
                             <a href="/">
                                 <span class="pi pi-phone text-base text-white lg:block hidden lg:pr-2"></span></a>
                             <div class="flex items-center">
-                                <span class="pi pi-bars text-base cursor-pointer text-white"></span>
+                                <span class="pi pi-bars text-base cursor-pointer text-white pl-2"
+                                    @click="handOpendSideBar"></span>
                             </div>
                         </div>
                     </div>
@@ -132,6 +133,7 @@ const datepicker = ref(null);
 const currentDate = ref([]);
 const date = ref([new Date(), addDays(new Date(), 5)]);
 const model = inject("model");
+const sidebar = inject("sidebar");
 const modeHeader = reactive({
     list: false,
     dateModel: false
@@ -148,6 +150,10 @@ const rentRoom = reactive({
         Childrens: 0,
     }],
 });
+const handOpendSideBar = () => {
+    model.value = true;
+    sidebar.value = true;
+}
 const handShowdate = () => {
     if (currentDate.value.length > 0) {
         return `${currentDate.value[0]} - ${currentDate.value[1]}`

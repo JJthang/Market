@@ -26,8 +26,6 @@
                             root: {
                                 class: 'lg:w-[6rem] lg:py-1 text-[#1a489c] fjc',
                             },
-                            // fixWidth
-                            // lg:fixWidth
                         }" optionLabel="name" placeholder="Sort by" class="w-full md:w-9rem" />
                         <Button label="Filter" :pt="{
                             label: {
@@ -108,9 +106,6 @@ watch(loadMore, (vuewValue) => {
 //     select: (data) => data.data,
 //     keepPreviousData: true,
 // });
-
-
-
 </script>
 
 <style lang="scss" scoped>

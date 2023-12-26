@@ -6,7 +6,7 @@
 
 <script setup>
 import { defineProps } from "vue";
-const { classButton } = defineProps(["classButton"]);
+const { classButton } = defineProps(['classButton']);
 
 </script>
 
