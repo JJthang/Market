@@ -97,15 +97,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex justify-between lg:pt-3 items-center gap-[75px] md:gap-0 pb-3 order-1 lg:order-2">
+                        <div
+                            class="flex justify-between lg:pt-3 items-center gap-[200px] lg:gap-4 md:gap-0 pb-3 order-1 lg:order-2">
                             <div class="flex justify-center items-center gap-2 mr-10">
                                 <span class="pi pi-user text-white mr-1"></span>
                                 <span class="text-[#FFD25D]">Login</span>
                                 <span class="text-[#FFD25D]">or</span>
                                 <span class="text-[#FFD25D]">Join</span>
                             </div>
-                            <a href="/">
-                                <span class="pi pi-phone text-base text-white lg:block hidden lg:pr-2"></span></a>
+                            <a href="/" class="lg:block hidden">
+                                <span class="pi pi-phone text-base text-white lg:pr-2"></span></a>
                             <div class="flex items-center">
                                 <span class="pi pi-bars text-base cursor-pointer text-white pl-2"
                                     @click="handOpendSideBar"></span>

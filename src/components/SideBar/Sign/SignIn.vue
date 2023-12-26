@@ -1,5 +1,5 @@
 <template>
-    <div class="sign-up-template fixed w-[500px] top-0 right-0 h-full z-[1001] bg-white p-6">
+    <div class="sign-up-template fixed w-full md:w-[500px] top-0 right-0 h-full z-[1001] bg-white p-6">
         <div class="w-full flex justify-end items-center">
             <span class="pi pi-times text-xl cursor-pointer" @click="handCloseSideBar"></span>
         </div>
